@@ -14,13 +14,13 @@ CTRL + ` (backtick) will open the terminal, if not just press the terminal butto
 
 you should be within the root of the project now so run these commands one at a time:
 
-##npm install
-##cd client
-##npm install
-##cd ..
-##cd server
-##npm install
-##cd ..
+## npm install
+## cd client
+## npm install
+## cd ..
+## cd server
+## npm install
+## cd ..
 
 if everything was done correctly you should be able to run the development server with:
 ##npm run start:all
