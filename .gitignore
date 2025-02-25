@@ -1,2 +1,41 @@
+# Node.js dependencies
 node_modules/
+
+# npm package lock file (you can choose to keep it if you want)
 package-lock.json
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variable files (ignoring .env.local and other environments)
+.env.*.local
+
+# Next.js build output
+.next/
+
+# Build directories (e.g., for Babel, TypeScript, etc.)
+dist/
+build/
+
+# Jest test coverage
+coverage/
+
+# Temporary files
+*.swp
+*.swo
+
+# Operating system files
+Desktop.ini
