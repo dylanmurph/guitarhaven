@@ -23,7 +23,7 @@ you should be within the root of the project now so run these commands one at a 
 ## cd ..
 
 if everything was done correctly you should be able to run the development server with:
-##npm run start:all
+## npm run start:all
 
 This is adapted from one of Derek's examples on his site, i just want proof of concept and ensure we can all get connected
 
