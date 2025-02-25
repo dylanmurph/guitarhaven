@@ -1,0 +1,15 @@
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:all": "concurrently \"cd server && npm start\" \"cd client && npm start\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
