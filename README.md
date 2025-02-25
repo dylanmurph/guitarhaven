@@ -13,7 +13,7 @@ open guitarhaven folder in webstorm
 
 CTRL + ` (backtick) will open the terminal, if not just press the terminal button on the bottom left
 
-##Alternatively use cmd/ps and cd to your root directory and do the following commands from there instead. Its quicker to open terminal within the ide though.
+## Alternatively use cmd/ps and cd to your root directory and do the following commands from there instead. Its quicker to open terminal within the ide though.
 
 you should be within the root of the project now so run these commands one at a time:
 
