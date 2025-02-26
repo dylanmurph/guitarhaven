@@ -15,6 +15,7 @@ export default class GuitarTable extends Component
                         <th>Year</th>
                         <th>Price</th>
                         <th>Type</th>
+                        <th></th>
                         <th> </th>
                     </tr>
                 </thead>

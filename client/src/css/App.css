@@ -96,7 +96,7 @@ color:pink;
 
 
 
-/* table of cars */
+
 .table-container table
 {
     width:100%;
@@ -135,4 +135,9 @@ color:pink;
 {
     margin-top:1em;
 }
-/*end of table of cars */
+
+.table-container img {
+    width: 100px;
+    height: auto;
+}
+

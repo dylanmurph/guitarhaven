@@ -8,7 +8,7 @@ const guitars = [
         year: 1973,
         price: 1577,
         type: "Electric",
-        image: "client/public/images/fenderAmericanProfessionalTelecasterDeluxeShawbucker.jpg",
+        image: "/images/fenderAmericanProfessionalTelecasterDeluxeShawbucker.jpg",
     },
     {
         name: "Fender Stratocaster",
@@ -16,7 +16,7 @@ const guitars = [
         year: 2019,
         price: 1921,
         type: "Electric",
-        image: "client/public/images/fenderAmericanProfessional2HSSStratocaster.jpg",
+        image: "/images/fenderAmericanProfessional2HSSStratocaster.jpg",
     },
     {
         name: "Yamaha Revstar",
@@ -24,7 +24,7 @@ const guitars = [
         year: 2025,
         price: 757,
         type: "Electric",
-        image: "client/public/images/yamahaRevstarStandardRSS20FLG.jpg",
+        image: "/images/yamahaRevstarStandardRSS20FLG.jpg",
     },
     {
         name: "Yamaha Pacifica",
@@ -32,7 +32,7 @@ const guitars = [
         year: 2022,
         price: 304,
         type: "Electric",
-        image: "client/public/images/yamahaPA112VMPacifica.jpg",
+        image: "/images/yamahaPA112VMPacifica.jpg",
     },
     {
         name: "Gretsch Streamliner",
@@ -40,7 +40,7 @@ const guitars = [
         year: 2024,
         price: 315,
         type: "Electric",
-        image: "client/public/images/gretschG2210SolidBodyStreamliner.jpg",
+        image: "/images/gretschG2210SolidBodyStreamliner.jpg",
     },
     {
         name: "Gretsch Electromatic",
@@ -48,7 +48,7 @@ const guitars = [
         year: 2024,
         price: 501,
         type: "Electric",
-        image: "client/public/images/gretschG5220ElectromaticJetBT.png",
+        image: "/images/gretschG5220ElectromaticJetBT.png",
     },
     {
         name: "Schecter Demon",
@@ -56,7 +56,7 @@ const guitars = [
         year: 2020,
         price: 699,
         type: "Electric",
-        image: "client/public/images/schecterDemon6.png",
+        image: "/images/schecterDemon6.png",
     },
     {
         name: "Schecter C6 Plus HH",
@@ -64,7 +64,7 @@ const guitars = [
         year: 2016,
         price: 499,
         type: "Electric",
-        image: "client/public/images/schecterC6PlusHH.jpg",
+        image: "/images/schecterC6PlusHH.jpg",
     },
     {
         name: "Taylor 618E",
@@ -72,7 +72,7 @@ const guitars = [
         year: 2010,
         price: 2559,
         type: "Acoustic",
-        image: "client/public/images/taylor618EElectro-Acoustic.jpg",
+        image: "/images/taylor618EElectro-Acoustic.jpg",
     },
     {
         name: "Yamaha ARE",
@@ -80,7 +80,7 @@ const guitars = [
         year: 2003,
         price: 1102,
         type: "Acoustic",
-        image: "client/public/images/yamahaLL16ARE.jpg",
+        image: "/images/yamahaLL16ARE.jpg",
     },
     {
         name: "Takamine G Series",
@@ -88,7 +88,7 @@ const guitars = [
         year: 2015,
         price: 559,
         type: "Acoustic",
-        image: "client/public/images/takamineGSeriesGJ72CE.png",
+        image: "/images/takamineGSeriesGJ72CE.png",
     },
     {
         name: "Taylor 814CE",
@@ -96,7 +96,7 @@ const guitars = [
         year: 1996,
         price: 3699,
         type: "Acoustic",
-        image: "client/public/images/taylor814CE.jpg",
+        image: "/images/taylor814CE.jpg",
     },
 ];
 
