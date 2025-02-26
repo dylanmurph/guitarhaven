@@ -7,6 +7,7 @@ let guitarsSchema = new mongoose.Schema(
     year: { type: Number, required: true }, 
     price: { type: Number, required: true }, 
     type: { type: String },
+    image: {type: String, required: false},
    },
    {
        collection: `guitars`
