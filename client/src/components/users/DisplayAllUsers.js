@@ -1,28 +1,25 @@
 import React, {Component} from "react"
 import {Link} from "react-router-dom"
-
 import axios from "axios"
-
-import GuitarTable from "./GuitarTable"
-
-import {SERVER_HOST} from "../config/global_constants"
+import UserTable from "./UserTable"
+import {SERVER_HOST} from "../../config/global_constants"
 
 
-export default class DisplayAllGuitars extends Component 
+export default class DisplayAllUsers extends Component 
 {
     constructor(props) 
     {
         super(props)
         
         this.state = {
-            guitars:[]
+            users:[]
         }
     }
     
     
     componentDidMount() 
     {
-        axios.get(`${SERVER_HOST}/guitars`)
+        axios.get(`${SERVER_HOST}/users`)
         .then(res => 
         {
             if(res.data)
@@ -34,7 +31,7 @@ export default class DisplayAllGuitars extends Component
                 else
                 {           
                     console.log("Records read")   
-                    this.setState({guitars: res.data}) 
+                    this.setState({users: res.data}) 
                 }   
             }
             else
@@ -48,12 +45,12 @@ export default class DisplayAllGuitars extends Component
     render() 
     {   
         return (           
-            <div className="form-container">
-                <div className="table-container">
-                    <GuitarTable guitars={this.state.guitars} /> 
+            <div className="table-container">
+                <div className="table">
+                    <UserTable users={this.state.users} /> 
 
-                    <div className="add-new-guitar">
-                        <Link className="blue-button" to={"/AddGuitar"}>Add New Guitar</Link>
+                    <div className="submit-container">
+                        <Link className="submit-button" to={"/AddUser"}>Add New User</Link>
                     </div>
                 </div>
             </div> 
