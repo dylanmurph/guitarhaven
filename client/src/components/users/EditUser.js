@@ -17,7 +17,8 @@ export default class EditUser extends Component {
             address2: "",
             county: "",
             phone: "",
-            type: "",
+            accessLevel: "",
+            image: "",
             redirectToDisplayAllUsers: false
         }
     }
@@ -40,7 +41,9 @@ export default class EditUser extends Component {
                             address1: res.data.address1,
                             address2: res.data.address2,
                             county: res.data.county,
-                            phone: res.data.phone
+                            phone: res.data.phone,
+                            accessLevel: res.data.accessLevel,
+                            image: res.data.image,
                         })
                     }
                 } else {
@@ -65,7 +68,8 @@ export default class EditUser extends Component {
             address2: this.state.address2,
             county: this.state.county,
             phone: this.state.phone,
-            type: this.state.type
+            accessLevel: this.state.accessLevel,
+            image: this.state.image
         }
 
         axios.put(`${SERVER_HOST}/users/${this.props.match.params.id}`, userObject)
@@ -193,6 +197,29 @@ export default class EditUser extends Component {
                                 type="number"
                                 name="phone"
                                 value={this.state.phone}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            Access Level:
+                            <input
+                                type="number"
+                                name="accessLevel"
+                                value={this.state.accessLevel}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Image:
+                            <input
+                                type="text"
+                                name="image"
+                                value={this.state.image}
                                 onChange={this.handleChange}
                             />
                         </label>

@@ -27,7 +27,7 @@ export default class DeleteUser extends Component
                 {
                     console.log(res.data.errorMessage)
                 }
-                else // success
+                else
                 {
                     console.log("Record deleted")
                 }

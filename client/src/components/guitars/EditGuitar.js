@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { Redirect, Link } from "react-router-dom";
-import LinkInClass from "../LinkInClass";
-import axios from "axios";
-import { SERVER_HOST } from "../../config/global_constants";
+import React, { Component } from "react"
+import { Redirect, Link } from "react-router-dom"
+import LinkInClass from "../LinkInClass"
+import axios from "axios"
+import { SERVER_HOST } from "../../config/global_constants"
 
 export default class EditGuitar extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             name: "",
@@ -14,18 +14,19 @@ export default class EditGuitar extends Component {
             year: "",
             price: "",
             type: "",
+            image: "",
             redirectToDisplayAllGuitars: false
-        };
+        }
     }
 
     componentDidMount() {
-        this.inputToFocus.focus();
+        this.inputToFocus.focus()
 
         axios.get(`${SERVER_HOST}/guitars/${this.props.match.params.id}`)
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
-                        console.log(res.data.errorMessage);
+                        console.log(res.data.errorMessage)
                     } else {
                         this.setState({
                             name: res.data.name,
@@ -33,27 +34,28 @@ export default class EditGuitar extends Component {
                             year: res.data.year,
                             price: res.data.price,
                             type: res.data.type
-                        });
+                        })
                     }
                 } else {
-                    console.log("Record not found");
+                    console.log("Record not found")
                 }
-            });
+            })
     }
 
     handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
-    };
+        this.setState({ [e.target.name]: e.target.value })
+    }
 
     handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
         const guitarObject = {
             name: this.state.name,
             model: this.state.model,
             year: Number(this.state.year),
             price: Number(this.state.price),
-            type: this.state.type
+            type: this.state.type,
+            image: this.state.image,
         };
 
         axios.put(`${SERVER_HOST}/guitars/${this.props.match.params.id}`, guitarObject)
@@ -85,7 +87,9 @@ export default class EditGuitar extends Component {
                                 name="name"
                                 value={this.state.name}
                                 onChange={this.handleChange}
-                                ref={(input) => { this.inputToFocus = input }}
+                                ref={(input) => {
+                                    this.inputToFocus = input
+                                }}
                             />
                         </label>
                     </div>
@@ -142,7 +146,19 @@ export default class EditGuitar extends Component {
                         </label>
                     </div>
 
-                    <LinkInClass value="Save Changes" className="green-button" onClick={this.handleSubmit} />
+                    <div>
+                        <label>
+                            Image:
+                            <input
+                                type="text"
+                                name="image"
+                                value={this.state.image}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                    </div>
+
+                    <LinkInClass value="Save Changes" className="green-button" onClick={this.handleSubmit}/>
                     <Link className="red-button" to="/DisplayAllGuitars">Cancel</Link>
                 </form>
             </div>

@@ -10,7 +10,7 @@ make sure mongodb is running, if you dont know how to do that, google it
 
 open guitarhaven folder in webstorm
 
-CTRL + ` (backtick) will open the terminal, if not just press the terminal button on the bottom left
+CTRL + ` (backtick) will open the terminal, if not just press the terminalbutton on the bottom left
 
 you should be within the root of the project now so run these commands one at a time:
 

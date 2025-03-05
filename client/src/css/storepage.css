@@ -1,0 +1,61 @@
+.store-container {
+    max-width: 1400px;
+    margin: 0 auto 0 auto;
+    padding: 20px;
+}
+
+.store-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.store-item {
+    background: white;
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.store-item:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.guitar-image {
+    padding: 5px;
+    max-height: 200px;
+}
+
+.guitar-details {
+    border-top: thin solid #b9b9b9;
+    border-radius: 10px;
+    background: #fafafa;
+    padding: 5px;
+}
+
+.guitar-name{
+    font-weight: bold;
+    font-size: 18px;
+    color: #181818;
+}
+
+.guitar-model, .guitar-year {
+    font-size: 14px;
+    color: #5d5d5d;
+}
+
+.guitar-price {
+    font-weight: bold;
+    font-size: 20px;
+    color: #181818;
+}
+
+.guitar-type {
+    text-align: right;
+    font-size: 12px;
+    color: #7c7c7c;
+}

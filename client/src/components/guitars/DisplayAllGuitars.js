@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import axios from "axios"
 import GuitarTable from "./GuitarTable"
 import {SERVER_HOST} from "../../config/global_constants"
+import "../../css/table.css"
 
 
 export default class DisplayAllGuitars extends Component 
@@ -46,11 +47,11 @@ export default class DisplayAllGuitars extends Component
     {   
         return (
             <div className="table-container">
-                <div className="table">
+                <div>
                     <GuitarTable guitars={this.state.guitars} /> 
 
                     <div className="submit-container">
-                        <Link className="submit-button" to={"/AddGuitar"}>Add New Guitar</Link>
+                        <Link className="button" to={"/AddGuitar"}>Add New Guitar</Link>
                     </div>
                 </div>
             </div>
