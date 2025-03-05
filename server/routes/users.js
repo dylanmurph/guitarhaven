@@ -2,7 +2,6 @@ const router = require(`express`).Router()
 
 const usersModel = require(`../models/users`)
 
-// read all records
 router.get(`/users`, (req, res) =>
 {
     usersModel.find((error, data) =>
@@ -11,8 +10,6 @@ router.get(`/users`, (req, res) =>
     })
 })
 
-
-// Read one record
 router.get(`/users/:id`, (req, res) =>
 {
     usersModel.findById(req.params.id, (error, data) =>
@@ -21,8 +18,6 @@ router.get(`/users/:id`, (req, res) =>
     })
 })
 
-
-// Add new record
 router.post(`/users`, (req, res) =>
 {
     usersModel.create(req.body, (error, data) =>
@@ -31,8 +26,6 @@ router.post(`/users`, (req, res) =>
     })
 })
 
-
-// Update one record
 router.put(`/users/:id`, (req, res) =>
 {
     usersModel.findByIdAndUpdate(req.params.id, {$set: req.body}, (error, data) =>
@@ -41,8 +34,6 @@ router.put(`/users/:id`, (req, res) =>
     })
 })
 
-
-// Delete one record
 router.delete(`/users/:id`, (req, res) =>
 {
     usersModel.findByIdAndRemove(req.params.id, (error, data) =>

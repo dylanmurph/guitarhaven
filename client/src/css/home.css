@@ -9,44 +9,41 @@
 }
 
 .categories-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    max-width: 70%;
+    margin: 0 auto 0 auto;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .category-tile {
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid #bebebe;
-    transition: transform 0.3s ease-in-out;
+    border: 1px solid #b9b9b9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .category-tile img {
-    width: 250px;
-    height: 250px;
-
+    width: 100%;
 }
 
 .category-tile:hover {
     cursor: pointer;
     transform: scale(1.02);
-    color: #3d3d3d;
+    opacity: 0.8;
 }
 
 .category-names {
+    width: 100%;
+    text-align: center;
     font-size: 30px;
     font-weight: bold;
     position: absolute;
     top: 0;
     left: 0;
-    width: 250px;
-    height: 250px;
-    text-align: center;
-    box-shadow:inset 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 

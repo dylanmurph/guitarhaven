@@ -2,7 +2,6 @@ const router = require(`express`).Router()
 
 const guitarsModel = require(`../models/guitars`)
 
-// read all records
 router.get(`/guitars`, (req, res) =>
 {
     guitarsModel.find((error, data) =>
@@ -11,8 +10,6 @@ router.get(`/guitars`, (req, res) =>
     })
 })
 
-
-// Read one record
 router.get(`/guitars/:id`, (req, res) =>
 {
     guitarsModel.findById(req.params.id, (error, data) =>
@@ -21,8 +18,6 @@ router.get(`/guitars/:id`, (req, res) =>
     })
 })
 
-
-// Add new record
 router.post(`/guitars`, (req, res) =>
 {
     guitarsModel.create(req.body, (error, data) =>
@@ -31,8 +26,6 @@ router.post(`/guitars`, (req, res) =>
     })
 })
 
-
-// Update one record
 router.put(`/guitars/:id`, (req, res) =>
 {
     guitarsModel.findByIdAndUpdate(req.params.id, {$set: req.body}, (error, data) =>
@@ -41,8 +34,6 @@ router.put(`/guitars/:id`, (req, res) =>
     })
 })
 
-
-// Delete one record
 router.delete(`/guitars/:id`, (req, res) =>
 {
     guitarsModel.findByIdAndRemove(req.params.id, (error, data) =>

@@ -17,7 +17,8 @@ export default class AddUser extends Component {
             address2: "",
             county: "",
             phone: "",
-            type: "",
+            accessLevel: "",
+            image: "",
             redirectToDisplayAllUsers: false
         }
     }
@@ -41,8 +42,9 @@ export default class AddUser extends Component {
             address1: this.state.address1,
             address2: this.state.address2,
             county: this.state.county,
-            phone: this.state.phone,
-            type: this.state.type
+            phone: Number(this.state.phone),
+            accessLevel: this.state.accessLevel,
+            image: this.state.image
         }
 
         axios.post(`${SERVER_HOST}/users`, userObject)
@@ -172,6 +174,29 @@ export default class AddUser extends Component {
                             type="number"
                             name="phone"
                             value={this.state.phone}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        Access Level:
+                        <input
+                            type="number"
+                            name="accessLevel"
+                            value={this.state.accessLevel}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Image:
+                        <input
+                            type="text"
+                            name="image"
+                            value={this.state.image}
                             onChange={this.handleChange}
                         />
                     </label>

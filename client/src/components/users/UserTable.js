@@ -7,7 +7,7 @@ export default class UserTable extends Component
     render() 
     {
         return (
-            <table>
+            <table className="table">
                 <thead>
                     <tr>
                         <th>First Name</th>
@@ -18,7 +18,8 @@ export default class UserTable extends Component
                         <th>Address Line 2</th>
                         <th>County</th>
                         <th>Phone No.</th>
-                        <th>Type</th>
+                        <th>Access Level</th>
+                        <th>Profile Picture</th>
                         <th></th>
                     </tr>
                 </thead>

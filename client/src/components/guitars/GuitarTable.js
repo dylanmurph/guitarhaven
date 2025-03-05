@@ -6,7 +6,7 @@ export default class GuitarTable extends Component
     render() 
     {
         return (
-            <table>
+            <table className="table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -14,6 +14,7 @@ export default class GuitarTable extends Component
                         <th>Year</th>
                         <th>Price</th>
                         <th>Type</th>
+                        <th>Image</th>
                         <th></th>
                     </tr>
                 </thead>

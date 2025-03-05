@@ -1,8 +1,8 @@
-import React, {Component} from "react";
-import '../../css/footer.css';
-import Facebook from "../../images/social-fb.png"
-import X from "../../images/social-x.png"
-import Instagram from "../../images/social-insta.png"
+import React, {Component} from "react"
+import '../css/footer.css'
+import Facebook from "../images/social-fb.png"
+import X from "../images/social-x.png"
+import Instagram from "../images/social-insta.png"
 
 
 export default class footer extends Component {

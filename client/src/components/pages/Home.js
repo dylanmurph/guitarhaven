@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component} from "react"
 import "../../css/home.css"
 import BannerImage from "../../images/banner.png"
 import AcousticImage from "../../images/acoustic.png"
@@ -33,6 +33,6 @@ export default class Home extends Component {
                     ))}
                 </div>
             </div>
-        );
+        )
     }
 }

@@ -10,7 +10,8 @@ let usersSchema = new mongoose.Schema(
         address2: { type: String, required: true },
         county: { type: String, required: true },
         phone: { type: Number, required: true },
-        type: { type: String, }
+        accessLevel: { type: Number, default:parseInt(process.env.ACCESS_LEVEL_NORMAL_USER)},
+        image: { type: String}
     },
     {
         collection: `users`

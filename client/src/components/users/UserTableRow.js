@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import {Link} from "react-router-dom"
+import {SERVER_HOST} from "../../config/global_constants"
 
 
 export default class UserTableRow extends Component {
@@ -14,9 +15,10 @@ export default class UserTableRow extends Component {
                 <td>{this.props.user.address2}</td>
                 <td>{this.props.user.county}</td>
                 <td>{this.props.user.phone}</td>
-                <td>{this.props.user.type}</td>
+                <td>{this.props.user.accessLevel}</td>
+                <td><img src={`${SERVER_HOST}${this.props.user.image}`} alt={this.props.user.name} className="guitar-image"/></td>
                 <td>
-                    <Link className="edit-button" to={"/EditUser/" + this.props.user._id}>Edit</Link>
+                    <Link className="button" to={"/EditUser/" + this.props.user._id}>Edit</Link>
                     <Link className="delete-button" to={"/DeleteUser/" + this.props.user._id}>Delete</Link>
                 </td>
             </tr>

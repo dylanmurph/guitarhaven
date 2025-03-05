@@ -4,6 +4,7 @@ import axios from "axios"
 import UserTable from "./UserTable"
 import {SERVER_HOST} from "../../config/global_constants"
 
+import "../../css/table.css"
 
 export default class DisplayAllUsers extends Component 
 {
@@ -15,7 +16,6 @@ export default class DisplayAllUsers extends Component
             users:[]
         }
     }
-    
     
     componentDidMount() 
     {
@@ -46,11 +46,11 @@ export default class DisplayAllUsers extends Component
     {   
         return (           
             <div className="table-container">
-                <div className="table">
+                <div>
                     <UserTable users={this.state.users} /> 
 
                     <div className="submit-container">
-                        <Link className="submit-button" to={"/AddUser"}>Add New User</Link>
+                        <Link className="button" to={"/AddUser"}>Add New User</Link>
                     </div>
                 </div>
             </div> 
