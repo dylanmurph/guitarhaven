@@ -25,6 +25,31 @@
     transform: scale(1.02);
 }
 
+.store-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.search-bar-store {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+.filter-dropdown, .sort-dropdown {
+    padding: 10px;
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+}
+
 .guitar-image {
     padding: 5px;
     max-height: 200px;
