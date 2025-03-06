@@ -1,0 +1,152 @@
+[{
+  "_id": {
+    "$oid": "67c74df045492844288ea993"
+  },
+  "firstName": "Dylan",
+  "lastName": "Murphy",
+  "email": "d00223094@student.dkit.ie",
+  "password": "12345678",
+  "address1": "18 Shamrock Grove",
+  "address2": "Dunleer",
+  "county": "Louth",
+  "phone": 871231234,
+  "image": "/uploads/users/dylan.png",
+  "accessLevel": 2
+},
+{
+  "_id": {
+    "$oid": "67c8d0bd3e113434bca9069b"
+  },
+  "firstName": "Sean",
+  "lastName": "Smith",
+  "email": "sean.smith@gmail.com",
+  "password": "password123",
+  "address1": "37 Castle St",
+  "address2": "Abbey Rd",
+  "county": "Cork",
+  "phone": 871814217,
+  "image": "/uploads/users/seansmith.png",
+  "accessLevel": 1
+},
+{
+  "_id": {
+    "$oid": "67c8d0bd3e113434bca9069c"
+  },
+  "firstName": "Sean",
+  "lastName": "Sullivan",
+  "email": "sean.sullivan@gmail.com",
+  "password": "password123",
+  "address1": "30 Market St",
+  "address2": "Church St",
+  "county": "Clare",
+  "phone": 871301437,
+  "image": "/uploads/users/seansullivan.png",
+  "accessLevel": 1
+},
+{
+  "_id": {
+    "$oid": "67c8d0bd3e113434bca9069d"
+  },
+  "firstName": "Liam",
+  "lastName": "Doyle",
+  "email": "liam.doyle@gmail.com",
+  "password": "password123",
+  "address1": "5 Park Rd",
+  "address2": "Main St",
+  "county": "Kerry",
+  "phone": 871127847,
+  "image": "/uploads/users/liamdoyle.png",
+  "accessLevel": 1
+},
+{
+  "_id": {
+    "$oid": "67c8d0bd3e113434bca9069f"
+  },
+  "firstName": "Ryan",
+  "lastName": "McCarthy",
+  "email": "ryan.mccarthy@gmail.com",
+  "password": "password123",
+  "address1": "32 Church St",
+  "address2": "Abbey Rd",
+  "county": "Limerick",
+  "phone": 871232391,
+  "image": "/uploads/users/ryanmccarthy.png",
+  "accessLevel": 1
+},
+{
+  "_id": {
+    "$oid": "67c8d0bd3e113434bca906a1"
+  },
+  "firstName": "Oisin",
+  "lastName": "Murphy",
+  "email": "oisin.murphy@gmail.com",
+  "password": "password123",
+  "address1": "46 Main St",
+  "address2": "Park Rd",
+  "county": "Dublin",
+  "phone": 871128756,
+  "image": "/uploads/users/oisinmurphy.png",
+  "accessLevel": 1
+},
+{
+  "_id": {
+    "$oid": "67c8d0bd3e113434bca906a2"
+  },
+  "firstName": "Cian",
+  "lastName": "McCarthy",
+  "email": "cian.mccarthy@gmail.com",
+  "password": "password123",
+  "address1": "8 Market St",
+  "address2": "Market St",
+  "county": "Cork",
+  "phone": 871650433,
+  "image": "/uploads/users/cianmccarthy.png",
+  "accessLevel": 1
+},
+{
+  "_id": {
+    "$oid": "67c8d0bd3e113434bca906a3"
+  },
+  "firstName": "Ryan",
+  "lastName": "O'Connor",
+  "email": "ryan.o'connor@gmail.com",
+  "password": "password123",
+  "address1": "36 Market St",
+  "address2": "High St",
+  "county": "Galway",
+  "phone": 871629262,
+  "image": "/uploads/users/ryanoconnor.png",
+  "accessLevel": 1
+},
+{
+  "_id": {
+    "$oid": "67c8d59a05c5e05e901688e9"
+  },
+  "accessLevel": 1,
+  "firstName": "Dylan",
+  "lastName": "Sheils",
+  "email": "dylan.sheils@outlook.com",
+  "password": "password123",
+  "address1": "32 Church St",
+  "address2": "Main Road",
+  "county": "Kildare",
+  "phone": 862143345,
+  "image": "/uploads/users/dylanshiels.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c8d5db05c5e05e901688ec"
+  },
+  "accessLevel": 1,
+  "firstName": "Patrick",
+  "lastName": "Landy",
+  "email": "p.landy@hotmail.com",
+  "password": "password123",
+  "address1": "23 Woodgrove Heights",
+  "address2": "Duleek",
+  "county": "Meath",
+  "phone": 871244536,
+  "image": "/uploads/users/patricklandy.png",
+  "__v": 0
+}]
