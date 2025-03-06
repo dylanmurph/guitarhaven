@@ -1,0 +1,308 @@
+[{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf12"
+  },
+  "name": "Fender",
+  "model": "Telecaster Deluxe Shawbucker",
+  "year": 1973,
+  "price": 1577,
+  "type": "Electric",
+  "image": "/uploads/guitars/fenderAmericanProfessionalTelecasterDeluxeShawbucker.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf13"
+  },
+  "name": "Fender Stratocaster",
+  "model": "2 HSS Stratocaster",
+  "year": 2019,
+  "price": 1921,
+  "type": "Electric",
+  "image": "/uploads/guitars/fenderAmericanProfessional2HSSStratocaster.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf14"
+  },
+  "name": "Yamaha Revstar",
+  "model": "Revstar Standard RSS20FLG",
+  "year": 2025,
+  "price": 757,
+  "type": "Electric",
+  "image": "/uploads/guitars/yamahaRevstarStandardRSS20FLG.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf15"
+  },
+  "name": "Yamaha Pacifica",
+  "model": "Pacifica PA112VM",
+  "year": 2022,
+  "price": 304,
+  "type": "Electric",
+  "image": "/uploads/guitars/yamahaPA112VMPacifica.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf16"
+  },
+  "name": "Gretsch Streamliner",
+  "model": "G2210 Solid Body Streamliner",
+  "year": 2024,
+  "price": 315,
+  "type": "Electric",
+  "image": "/uploads/guitars/gretschG2210SolidBodyStreamliner.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf17"
+  },
+  "name": "Gretsch Electromatic",
+  "model": "G5220 Electromatic Jet BT Solid Body",
+  "year": 2024,
+  "price": 501,
+  "type": "Electric",
+  "image": "/uploads/guitars/gretschG5220ElectromaticJetBT.png"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf18"
+  },
+  "name": "Schecter Demon",
+  "model": "Demon 6",
+  "year": 2020,
+  "price": 699,
+  "type": "Electric",
+  "image": "/uploads/guitars/schecterDemon6.png"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf19"
+  },
+  "name": "Schecter C6 Plus HH",
+  "model": "C6 Plus HH String Thru Body",
+  "year": 2016,
+  "price": 499,
+  "type": "Electric",
+  "image": "/uploads/guitars/schecterC6PlusHH.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf1a"
+  },
+  "name": "Taylor 618E",
+  "model": "618E Electro-Acoustic",
+  "year": 2010,
+  "price": 2559,
+  "type": "Acoustic",
+  "image": "/uploads/guitars/taylor618EElectro-Acoustic.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf1b"
+  },
+  "name": "Yamaha ARE",
+  "model": "LL16 ARE",
+  "year": 2003,
+  "price": 1102,
+  "type": "Acoustic",
+  "image": "/uploads/guitars/yamahaLL16ARE.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf1c"
+  },
+  "name": "Takamine G Series",
+  "model": "G Series GJ72CE",
+  "year": 2015,
+  "price": 559,
+  "type": "Acoustic",
+  "image": "/uploads/guitars/takamineGSeriesGJ72CE.png"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf1d"
+  },
+  "name": "Taylor 814CE",
+  "model": "814CE Grand Auditorium",
+  "year": 1996,
+  "price": 3699,
+  "type": "Acoustic",
+  "image": "/uploads/guitars/taylor814CE.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf1e"
+  },
+  "name": "Ibanez RG550",
+  "model": "RG550 Electric",
+  "year": 2021,
+  "price": 799,
+  "type": "Electric",
+  "image": "/uploads/guitars/ibanezRG550.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf1f"
+  },
+  "name": "Gibson Les Paul",
+  "model": "Les Paul Standard '50s",
+  "year": 2020,
+  "price": 2499,
+  "type": "Electric",
+  "image": "/uploads/guitars/gibsonLesPaulStandard50s.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf20"
+  },
+  "name": "PRS SE Custom 24",
+  "model": "SE Custom 24",
+  "year": 2023,
+  "price": 749,
+  "type": "Electric",
+  "image": "/uploads/guitars/prsSECustom24.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf21"
+  },
+  "name": "Fender American Performer",
+  "model": "American Performer Stratocaster",
+  "year": 2022,
+  "price": 1299,
+  "type": "Electric",
+  "image": "/uploads/guitars/fenderAmericanPerformerStratocaster.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf22"
+  },
+  "name": "Yamaha A-Series",
+  "model": "A1M Acoustic-Electric",
+  "year": 2021,
+  "price": 449,
+  "type": "Acoustic",
+  "image": "/uploads/guitars/yamahaA1M.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf23"
+  },
+  "name": "Martin D-28",
+  "model": "D-28 Acoustic",
+  "year": 2019,
+  "price": 2999,
+  "type": "Acoustic",
+  "image": "/uploads/guitars/martinD28.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf24"
+  },
+  "name": "Taylor 324ce",
+  "model": "324ce Grand Auditorium",
+  "year": 2020,
+  "price": 1599,
+  "type": "Acoustic",
+  "image": "/uploads/guitars/taylor324ce.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf25"
+  },
+  "name": "Gretsch G2622 Streamliner",
+  "model": "G2622 Streamliner",
+  "year": 2023,
+  "price": 849,
+  "type": "Electric",
+  "image": "/uploads/guitars/gretschG2622Streamliner.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf26"
+  },
+  "name": "Fender Jazz Bass",
+  "model": "American Professional II Jazz Bass",
+  "year": 2021,
+  "price": 1899,
+  "type": "Bass",
+  "image": "/uploads/guitars/fenderJazzBass.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf27"
+  },
+  "name": "Squier Vintage Modified",
+  "model": "Vintage Modified Jazz Bass",
+  "year": 2019,
+  "price": 379,
+  "type": "Bass",
+  "image": "/uploads/guitars/squierVintageModifiedJazzBass.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf28"
+  },
+  "name": "Fender Precision Bass",
+  "model": "American Professional II Precision Bass",
+  "year": 2021,
+  "price": 1899,
+  "type": "Bass",
+  "image": "/uploads/guitars/fenderPrecisionBass.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf29"
+  },
+  "name": "Music Man StingRay",
+  "model": "StingRay 4HH",
+  "year": 2022,
+  "price": 2199,
+  "type": "Bass",
+  "image": "/uploads/guitars/musicManStingRay4HH.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf2a"
+  },
+  "name": "Ibanez SR Series",
+  "model": "SR505E",
+  "year": 2020,
+  "price": 799,
+  "type": "Bass",
+  "image": "/uploads/guitars/ibanezSR505E.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf2b"
+  },
+  "name": "Rickenbacker 4003",
+  "model": "4003 Bass",
+  "year": 2021,
+  "price": 1799,
+  "type": "Bass",
+  "image": "/uploads/guitars/rickenbacker4003.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf2c"
+  },
+  "name": "Schecter Stiletto",
+  "model": "Stiletto Studio 4",
+  "year": 2021,
+  "price": 799,
+  "type": "Bass",
+  "image": "/uploads/guitars/schecterStilettoStudio4.jpg"
+},
+{
+  "_id": {
+    "$oid": "67c6f3d1f8c14966750eaf2d"
+  },
+  "name": "Epiphone Thunderbird",
+  "model": "Thunderbird IV Bass",
+  "year": 2022,
+  "price": 549,
+  "type": "Bass",
+  "image": "/uploads/guitars/epiphoneThunderbirdIV.jpg"
+}]

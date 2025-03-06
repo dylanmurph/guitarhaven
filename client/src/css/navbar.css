@@ -19,7 +19,7 @@
 }
 
 .logo {
-    height: 80px;
+    height: 70px;
 }
 
 .search-container {
@@ -41,6 +41,11 @@
     padding: 10px 30px 10px 10px;
     border: 1px solid #ffffff;
     border-radius: 20px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar input:focus {
+    outline: none;
 }
 
 .search-button {
@@ -66,7 +71,7 @@
     gap: 20px;
 }
 
-.links-container a {
+.links-container .navbar-link {
     text-decoration: none;
     color: white;
     font-size: 16px;

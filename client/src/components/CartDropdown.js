@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import "../css/navdropdown.css"
+import {Link} from "react-router-dom";
 
 export default class CartDropdown extends Component {
     render() {
@@ -8,7 +10,8 @@ export default class CartDropdown extends Component {
                 <div className="cart-items">
                     <p>No items in cart</p>
                 </div>
-                <button className="checkout-button">Checkout</button>
+
+                <Link className="submit-button" to="/checkout">Checkout</Link>
             </div>
         )
     }
