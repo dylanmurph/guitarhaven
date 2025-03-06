@@ -1,0 +1,45 @@
+.login-container {
+    width: 100%;
+    background: linear-gradient(190deg, rgb(79, 78, 75) 0%, rgb(42, 41, 40) 100%);
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.login-title {
+    text-align: center;
+    color: white;
+}
+
+.login-form .input-field {
+    padding: 15px;
+    border: none;
+    border-bottom: thin solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.submit-button{
+    width: 95%;
+    margin: 5px;
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    background-color: white;
+    border-radius: 4px;
+    border: thin solid white;
+}
+
+.register-container p {
+    color: white;
+}
+
+.forgot-password a{
+    color: white;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 14px;
+}
+
