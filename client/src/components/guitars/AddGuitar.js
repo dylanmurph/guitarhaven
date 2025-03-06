@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import {Redirect, Link} from "react-router-dom"
 import LinkInClass from "../LinkInClass"
 import axios from "axios"
-import {SERVER_HOST} from "../../config/global_constants"
+import {ACCESS_LEVEL_ADMIN, SERVER_HOST} from "../../config/global_constants"
 
 export default class AddGuitar extends Component {
     constructor(props) {
@@ -15,7 +15,7 @@ export default class AddGuitar extends Component {
             price: "",
             type: "",
             image: "",
-            redirectToDisplayAllGuitars: false
+            redirectToDisplayAllGuitars: localStorage.accessLevel < ACCESS_LEVEL_ADMIN
         }
     }
 
@@ -39,7 +39,7 @@ export default class AddGuitar extends Component {
             image: this.state.image
         }
 
-        axios.post(`${SERVER_HOST}/guitars`, guitarObject)
+        axios.post(`${SERVER_HOST}/guitars`, guitarObject, {headers:{"authorization":localStorage.token}})
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {

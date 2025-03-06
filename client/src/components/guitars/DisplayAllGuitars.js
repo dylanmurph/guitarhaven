@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import {Link} from "react-router-dom"
 import axios from "axios"
 import GuitarTable from "./GuitarTable"
-import {SERVER_HOST} from "../../config/global_constants"
+import {ACCESS_LEVEL_ADMIN, SERVER_HOST} from "../../config/global_constants"
 import "../../css/table.css"
 
 
@@ -15,13 +15,13 @@ export default class DisplayAllGuitars extends Component
             guitars:[],
             searchValue: "",
             filterType: "all",
-            sortChoice: "all"
+            sortChoice: "all",
         }
     }
 
     componentDidMount() 
     {
-        axios.get(`${SERVER_HOST}/guitars`)
+        axios.get(`${SERVER_HOST}/guitars`, {headers:{"authorization":localStorage.token}})
         .then(res => 
         {
             if(res.data)
@@ -75,8 +75,11 @@ export default class DisplayAllGuitars extends Component
 
     render() 
     {
+
         const filteredSortedGuitars = this.filterSortGuitars()
         return (
+            localStorage.accessLevel >= ACCESS_LEVEL_ADMIN
+                ?
             <div>
             <div className="filter-sort-search-bar">
                 <input className="search-bar-table" type="text"
@@ -110,6 +113,9 @@ export default class DisplayAllGuitars extends Component
                 </div>
             </div>
             </div>
+                :
+                null
+
         )
     }
 }

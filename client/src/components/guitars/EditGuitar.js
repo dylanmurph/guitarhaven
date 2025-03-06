@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Redirect, Link } from "react-router-dom"
 import LinkInClass from "../LinkInClass"
 import axios from "axios"
-import { SERVER_HOST } from "../../config/global_constants"
+import {ACCESS_LEVEL_ADMIN, SERVER_HOST } from "../../config/global_constants"
 
 export default class EditGuitar extends Component {
     constructor(props) {
@@ -15,14 +15,14 @@ export default class EditGuitar extends Component {
             price: "",
             type: "",
             image: "",
-            redirectToDisplayAllGuitars: false
+            redirectToDisplayAllGuitars: localStorage.accessLevel < ACCESS_LEVEL_ADMIN
         }
     }
 
     componentDidMount() {
         this.inputToFocus.focus()
 
-        axios.get(`${SERVER_HOST}/guitars/${this.props.match.params.id}`)
+        axios.get(`${SERVER_HOST}/guitars/${this.props.match.params.id}`, {headers:{"authorization":localStorage.token}})
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
@@ -57,22 +57,22 @@ export default class EditGuitar extends Component {
             price: Number(this.state.price),
             type: this.state.type,
             image: this.state.image,
-        };
+        }
 
-        axios.put(`${SERVER_HOST}/guitars/${this.props.match.params.id}`, guitarObject)
+        axios.put(`${SERVER_HOST}/guitars/${this.props.match.params.id}`, guitarObject, {headers:{"authorization":localStorage.token}})
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
-                        console.log(res.data.errorMessage);
+                        console.log(res.data.errorMessage)
                     } else {
-                        console.log("Record updated");
-                        this.setState({ redirectToDisplayAllGuitars: true });
+                        console.log("Record updated")
+                        this.setState({ redirectToDisplayAllGuitars: true })
                     }
                 } else {
-                    console.log("Record not updated");
+                    console.log("Record not updated")
                 }
-            });
-    };
+            })
+    }
 
     render() {
         return (
@@ -163,6 +163,6 @@ export default class EditGuitar extends Component {
                     <Link className="red-button" to="/DisplayAllGuitars">Cancel</Link>
                 </form>
             </div>
-        );
+        )
     }
 }

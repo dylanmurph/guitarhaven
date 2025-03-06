@@ -19,6 +19,16 @@ import DeleteUser from "./components/users/DeleteUser"
 import AddUser from "./components/users/AddUser"
 import StorePage from "./components/StorePage"
 
+import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
+
+
+if (typeof localStorage.accessLevel === "undefined")
+{
+    localStorage.name = "GUEST"
+    localStorage.accessLevel = ACCESS_LEVEL_GUEST
+    localStorage.token = null
+}
+
 
 export default class App extends Component {
     render() {

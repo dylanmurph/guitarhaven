@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import "../css/navdropdown.css"
-import { SERVER_HOST } from "../config/global_constants"
+import {ACCESS_LEVEL_ADMIN,ACCESS_LEVEL_GUEST, SERVER_HOST } from "../config/global_constants"
 
 export default class AccountDropdown extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ export default class AccountDropdown extends Component {
     }
 
     componentDidMount() {
-        if (sessionStorage.getItem("name")) {
+        if (localStorage.getItem("name")&&localStorage.getItem("token")) {
             this.setState({ isLoggedIn: true })
         }
     }
@@ -31,28 +31,39 @@ export default class AccountDropdown extends Component {
         axios.defaults.withCredentials = true
         axios.post(`${SERVER_HOST}/users/login/${this.state.email}/${this.state.password}`)
             .then((res) => {
-                if (res.data && !res.data.errorMessage) {
-                    sessionStorage.setItem("name", res.data.name)
-                    sessionStorage.setItem("accessLevel", res.data.accessLevel)
-                    this.setState({ isLoggedIn: true, errorMessage: "" })
-                } else {
-                    this.setState({errorMessage: res.data.errorMessage})
-                }})
-            .catch((error) => {
-                console.log("Error logging in:", error)
-                this.setState({ errorMessage: "An error occurred. Please try again." })
+                if(res.data)
+                {
+                    if (res.data.errorMessage)
+                    {
+                        console.log(res.data.errorMessage)
+                    }
+                    else
+                    {
+                        console.log("User logged in")
+
+                        localStorage.name = res.data.name
+                        localStorage.accessLevel = res.data.accessLevel
+                        localStorage.token = res.data.token
+
+                        this.setState({isLoggedIn:true})
+                    }
+                }
+                else
+                {
+                    console.log("Login failed")
+                }
             })
     }
 
     handleLogout = () => {
-        sessionStorage.clear()
-        this.setState({ isLoggedIn: false })
+        console.log("User logged out")
+        localStorage.clear()
+
+        this.setState({isLoggedIn:false})
     }
 
     user() {
-        const name = sessionStorage.getItem("name")
-        const accessLevel = sessionStorage.getItem("accessLevel")
-
+        const name = localStorage.getItem("name")
         return (
             <div className="account-menu">
                 <div className="text-container">
@@ -67,7 +78,7 @@ export default class AccountDropdown extends Component {
                     Account Details
                 </Link>
 
-                {accessLevel === "2" ? (
+                {localStorage.accessLevel >= ACCESS_LEVEL_ADMIN ? (
                     <Link className="submit-button" to="/admin">
                         Admin Tools
                     </Link>
@@ -130,7 +141,7 @@ export default class AccountDropdown extends Component {
 
     render() {
         let dropdown
-        if (this.state.isLoggedIn) {
+        if (localStorage.accessLevel>ACCESS_LEVEL_GUEST) {
             dropdown = this.user()
         } else {
             dropdown = this.guest()

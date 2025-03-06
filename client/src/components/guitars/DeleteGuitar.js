@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import {Redirect} from "react-router-dom"
 import axios from "axios"
-import {SERVER_HOST} from "../../config/global_constants"
+import {ACCESS_LEVEL_ADMIN, SERVER_HOST} from "../../config/global_constants"
 
 export default class DeleteGuitar extends Component
 {
@@ -10,13 +10,13 @@ export default class DeleteGuitar extends Component
         super(props)
 
         this.state = {
-            redirectToDisplayAllGuitars:false
+            redirectToDisplayAllGuitars:localStorage.accessLevel < ACCESS_LEVEL_ADMIN
         }
     }
 
     componentDidMount()
     {
-        axios.delete(`${SERVER_HOST}/guitars/${this.props.match.params.id}`)
+        axios.delete(`${SERVER_HOST}/guitars/${this.props.match.params.id}`,  {headers:{"authorization":localStorage.token}})
         .then(res =>
         {
             if(res.data)

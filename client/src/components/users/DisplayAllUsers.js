@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import {Link} from "react-router-dom"
 import axios from "axios"
 import UserTable from "./UserTable"
-import {SERVER_HOST} from "../../config/global_constants"
+import {SERVER_HOST, ACCESS_LEVEL_ADMIN} from "../../config/global_constants"
 
 import "../../css/table.css"
 
@@ -91,6 +91,8 @@ export default class DisplayAllUsers extends Component
     {
         const filteredSortedUsers = this.filterSortUsers()
         return (
+            localStorage.accessLevel >= ACCESS_LEVEL_ADMIN
+                ?
             <div>
                 <div className="filter-sort-search-bar">
                     <input className="search-bar-table" type="text"
@@ -125,6 +127,8 @@ export default class DisplayAllUsers extends Component
                     </div>
                 </div>
             </div>
+                :
+                null
         )
     }
 }
