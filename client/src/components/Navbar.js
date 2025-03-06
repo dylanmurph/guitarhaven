@@ -68,8 +68,7 @@ export default class Navbar extends Component {
                     </div>
 
                     <div className="links-container">
-                        <Link to="/admin">Admin Tools</Link>
-                        <Link to="/store">Store</Link>
+                        <Link className="navbar-link" to="/store">Store</Link>
 
                         <div className="dropdown-container">
                             <button onClick={this.toggleLoginDropdown} className="login-button">

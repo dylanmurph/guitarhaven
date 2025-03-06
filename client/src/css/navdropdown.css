@@ -1,14 +1,22 @@
-.login-container {
+.account-container, .cart-container {
     width: 100%;
     background: linear-gradient(190deg, rgb(79, 78, 75) 0%, rgb(42, 41, 40) 100%);
     border-radius: 0 0 10px 10px;
     padding: 10px;
     position: relative;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+.account-menu{
+    width: 100%;
 }
 
-.login-title {
+.account-title, .account-name, .cart-title{
     text-align: center;
     color: white;
+}
+
+.account-name{
+    display:flex;
 }
 
 .login-form .input-field {
@@ -21,18 +29,30 @@
     outline: none;
 }
 
-.submit-button{
+.submit-button, .account-menu a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 5px 5px;
+    font-size: 14px;
     width: 95%;
-    margin: 5px;
     text-decoration: none;
-    padding: 10px;
+    padding: 8px;
     color: black;
     background-color: white;
     border-radius: 4px;
     border: thin solid white;
+    box-sizing: border-box;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
 }
 
-.register-container p {
+.submit-button:hover, .account-menu a:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.account-text {
+    text-align: center;
     color: white;
 }
 
@@ -42,4 +62,3 @@
     font-style: italic;
     font-size: 14px;
 }
-

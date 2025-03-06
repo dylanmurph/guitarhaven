@@ -7,6 +7,10 @@ html,body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button, input{
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
