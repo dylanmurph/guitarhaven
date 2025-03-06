@@ -33,7 +33,8 @@ export default class EditGuitar extends Component {
                             model: res.data.model,
                             year: res.data.year,
                             price: res.data.price,
-                            type: res.data.type
+                            type: res.data.type,
+                            image: res.data.image
                         })
                     }
                 } else {
