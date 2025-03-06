@@ -1,12 +1,11 @@
 .navbar {
+    position: sticky;
     height: 90px;
     background: linear-gradient(200deg, rgb(91, 90, 86) 0%, rgb(42, 41, 40) 100%);
     display: flex;
     justify-content: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    position: sticky;
     top: 0;
-    z-index: 1;
 }
 
 .navbar-container {
@@ -89,12 +88,8 @@
 }
 
 .dropdown {
+    width: 230px;
     position: absolute;
     right: 0;
     top: 60px;
-    padding: 15px;
-    width: 200px;
-    background: white;
-    border: 1px solid black;
-    border-radius: 10px;
 }
