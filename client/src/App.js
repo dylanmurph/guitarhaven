@@ -55,6 +55,7 @@ export default class App extends Component {
                             <Route exact path="/AddUser" component={AddUser}/>
 
                             <Route exact path="/store" component={StorePage} />
+                            <Route path="/store/:category" component={StorePage}/>
 
                             <Route path="*" component={() => <h3>Invalid URL. Webpage does not exist</h3>}/>
                         </Switch>
