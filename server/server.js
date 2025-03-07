@@ -19,7 +19,7 @@ app.use(require(`./routes/guitars`))
 app.use(`/uploads/guitars`, express.static(process.env.GUITAR_STORE_IMAGES))
 app.use(require(`./routes/users`))
 app.use(`/uploads/users`, express.static(process.env.USER_ACCOUNT_IMAGES))
-
+app.use(require(`./routes/purchases`))
 // Port
 app.listen(process.env.SERVER_PORT, () =>
 {
