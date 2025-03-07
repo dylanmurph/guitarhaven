@@ -71,7 +71,7 @@ export default class AccountDropdown extends Component {
                 </div>
 
                 <Link className="submit-button" to="/purchase-history">
-                    Purchase History
+                   Your Purchases
                 </Link>
 
                 <Link className="submit-button" to="/modify-account">

@@ -2,10 +2,36 @@
     height: 400px;
 }
 
-.banner h1 {
-    font-size: 100px;
+.banner-overlay {
+    text-align: center;
+    width: 600px;
+    font-size: 30px;
     color: white;
-    padding: 20px;
+    padding: 10px;
+}
+
+.banner-overlay h2 {
+    margin-bottom: -35px;
+}
+
+.banner-overlay h4 {
+    font-style: italic;
+    font-family: 'Dancing Script', cursive;
+}
+
+.banner-link {
+    margin-top: 10px;
+    all: unset;
+    font-size: 18px;
+    padding: 12px;
+    border: 3px solid white;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.banner-link:hover {
+    background-color: #626262;
+    cursor: pointer;
 }
 
 .categories-container {
@@ -18,8 +44,8 @@
 
 .category-tile {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid #b9b9b9;

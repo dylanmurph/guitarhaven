@@ -20,6 +20,11 @@ export default class Home extends Component {
             <div>
                 <div className="home">
                     <div className="banner" style={{backgroundImage: `url(${BannerImage})`}}>
+                        <div className="banner-overlay">
+                            <h2>Guitar Haven</h2>
+                            <h4>Quality guitars from top brands</h4>
+                            <Link to="/store" className="banner-link">Explore Store</Link>
+                        </div>
                     </div>
                 </div>
 
