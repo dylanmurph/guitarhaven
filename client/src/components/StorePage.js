@@ -6,10 +6,11 @@ import "../css/storepage.css"
 export default class StorePage extends Component {
     constructor(props) {
         super(props)
+        const category = this.props.match.params.category || "all"
         this.state = {
             guitars: [],
             searchValue: "",
-            filterType: "all",
+            filterType: category,
             sortChoice: "all"
         }
     }
@@ -103,7 +104,7 @@ export default class StorePage extends Component {
 
                 <div className="store-tiles">
                     {filteredGuitars.map((guitar) => (
-                        <div className="store-item" key={guitar.id}>
+                        <div className="store-item" key={guitar._id}>
                             <img src={`${SERVER_HOST}${guitar.image}`} alt={guitar.name} className="guitar-image"/>
                             <div className="guitar-details">
                                 <p className="guitar-name">{guitar.name}</p>
