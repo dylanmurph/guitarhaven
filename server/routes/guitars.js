@@ -9,53 +9,18 @@ const JWT_PRIVATE_KEY = fs.readFileSync(process.env.JWT_PRIVATE_KEY_FILENAME, 'u
 
 router.get(`/guitars`, (req, res) =>
 {
-    jwt.verify(req.headers.authorization, JWT_PRIVATE_KEY, {algorithm: "HS256"}, (err, decodedToken) =>
+    guitarsModel.find((error, data) =>
     {
-        if (err)
-        {
-            res.json({errorMessage:`User is not logged in`})
-        }
-        else
-        {
-            if(decodedToken.accessLevel >= process.env.ACCESS_LEVEL_ADMIN)
-            {
-                guitarsModel.find((error, data) =>
-                {
-                    res.json(data)
-                })
-            }
-            else
-            {
-                res.json({errorMessage:`User is not an administrator, so they cannot add new records`})
-            }
-        }
+        res.json(data)
     })
 })
 
 router.get(`/guitars/:id`, (req, res) =>
 {
-    jwt.verify(req.headers.authorization, JWT_PRIVATE_KEY, {algorithm: "HS256"}, (err, decodedToken) =>
+    guitarsModel.findById(req.params.id, (error, data) =>
     {
-        if (err)
-        {
-            res.json({errorMessage:`User is not logged in`})
-        }
-        else
-        {
-            if(decodedToken.accessLevel >= process.env.ACCESS_LEVEL_ADMIN)
-            {
-                guitarsModel.findById(req.params.id, (error, data) =>
-                {
-                    res.json(data)
-                })
-            }
-            else
-            {
-                res.json({errorMessage:`User is not an administrator, so they cannot add new records`})
-            }
-        }
+        res.json(data)
     })
-
 })
 
 router.post(`/guitars`, (req, res) =>
@@ -104,7 +69,7 @@ router.put(`/guitars/:id`, (req, res) =>
             }
             else
             {
-                res.json({errorMessage:`User is not an administrator, so they cannot delete records`})
+                res.json({errorMessage:`User is not an administrator, so they cannot update records`})
             }
         }
     })
