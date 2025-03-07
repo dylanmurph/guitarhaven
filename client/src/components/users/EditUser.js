@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import {Redirect, Link} from "react-router-dom"
 import LinkInClass from "../LinkInClass"
 import axios from "axios"
-import {SERVER_HOST} from "../../config/global_constants"
+import {ACCESS_LEVEL_ADMIN,SERVER_HOST} from "../../config/global_constants"
 
 export default class EditUser extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ export default class EditUser extends Component {
             phone: "",
             accessLevel: "",
             image: "",
-            redirectToDisplayAllUsers: false
+            redirectToDisplayAllUsers: localStorage.accessLevel < ACCESS_LEVEL_ADMIN
         }
     }
 
@@ -27,7 +27,7 @@ export default class EditUser extends Component {
     componentDidMount() {
         this.inputToFocus.focus()
 
-        axios.get(`${SERVER_HOST}/users/${this.props.match.params.id}`)
+        axios.get(`${SERVER_HOST}/users/${this.props.match.params.id}`, {headers:{"authorization":localStorage.token}})
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
@@ -72,7 +72,7 @@ export default class EditUser extends Component {
             image: this.state.image
         }
 
-        axios.put(`${SERVER_HOST}/users/${this.props.match.params.id}`, userObject)
+        axios.put(`${SERVER_HOST}/users/${this.props.match.params.id}`, userObject, {headers:{"authorization":localStorage.token}})
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {

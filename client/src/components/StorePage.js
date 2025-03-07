@@ -94,8 +94,8 @@ export default class StorePage extends Component {
 
                     <select className="sort-dropdown" onChange={this.handleSortChange} value={this.state.sortChoice}>
                         <option value="all">Default Sorting</option>
-                        <option value="priceAsc">Price High to Low</option>
-                        <option value="priceDesc">Price Low to High</option>
+                        <option value="priceAsc">Price Low to High</option>
+                        <option value="priceDesc">Price High to Low</option>
                         <option value="yearDesc">Year Newest</option>
                         <option value="yearAsc">Year Oldest</option>
                     </select>

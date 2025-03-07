@@ -18,7 +18,7 @@ export default class DeleteUser extends Component
 
     componentDidMount()
     {
-        axios.delete(`${SERVER_HOST}/users/${this.props.match.params.id}`)
+        axios.delete(`${SERVER_HOST}/users/${this.props.match.params.id}`, {headers:{"authorization":localStorage.token}})
         .then(res =>
         {
             if(res.data)

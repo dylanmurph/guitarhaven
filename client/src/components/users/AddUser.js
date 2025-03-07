@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import {Redirect, Link} from "react-router-dom"
 import LinkInClass from "../LinkInClass"
 import axios from "axios"
-import {SERVER_HOST} from "../../config/global_constants"
+import {ACCESS_LEVEL_ADMIN, SERVER_HOST} from "../../config/global_constants"
 
 export default class AddUser extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ export default class AddUser extends Component {
             phone: "",
             accessLevel: "",
             image: "",
-            redirectToDisplayAllUsers: false
+            redirectToDisplayAllUsers: localStorage.accessLevel < ACCESS_LEVEL_ADMIN
         }
     }
 
@@ -47,7 +47,7 @@ export default class AddUser extends Component {
             image: this.state.image
         }
 
-        axios.post(`${SERVER_HOST}/users`, userObject)
+        axios.post(`${SERVER_HOST}/users`, userObject,{headers:{"authorization":localStorage.token}})
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
