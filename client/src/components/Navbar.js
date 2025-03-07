@@ -58,15 +58,6 @@ export default class Navbar extends Component {
                         <Link to="/"><img src={Logo} className="logo" alt="logo" /></Link>
                     </div>
 
-                    <div className="search-container">
-                        <div className="search-bar">
-                            <input type="text" placeholder="Search..." />
-                            <button type="submit" className="search-button">
-                                <img src={SearchIcon} alt="Search" />
-                            </button>
-                        </div>
-                    </div>
-
                     <div className="links-container">
                         <Link className="navbar-link" to="/store">Store</Link>
 

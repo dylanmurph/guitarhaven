@@ -35,22 +35,24 @@ tr:hover {
 }
 
 .filter-sort-search-bar{
+    margin-top: 40px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     padding: 10px;
-    gap: 20px;
+    gap: 70px;
 }
 
 .search-bar-table{
     padding: 10px;
-    width: 200px;
+    width: 400px;
     border: 1px solid #b9b9b9;
     border-radius: 10px;
     font-size: 15px;
     outline: none;
 }
 
-.filter-dropdown, .sort-dropdown {
+.filter-dropdown, .sort-dropdown, .add-guitar {
     padding: 10px;
     border: 1px solid #b9b9b9;
     border-radius: 10px;
@@ -58,5 +60,21 @@ tr:hover {
     cursor: pointer;
     outline: none;
     background-color: #f8f8f8;
+}
 
+.add-guitar{
+    background-color: #dbedff;
+}
+
+.add-guitar:hover{
+    background-color: #cde6ff;
+}
+
+.add-guitar a{
+    all: unset;
+}
+
+.add-guitar a:hover{
+    all: unset;
+    cursor: pointer;
 }

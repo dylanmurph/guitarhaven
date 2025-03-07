@@ -13,7 +13,6 @@ export default class UserTable extends Component
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th>Password</th>
                         <th>Address Line 1</th>
                         <th>Address Line 2</th>
                         <th>County</th>

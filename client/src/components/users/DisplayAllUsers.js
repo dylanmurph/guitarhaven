@@ -121,9 +121,6 @@ export default class DisplayAllUsers extends Component
                     <div>
                         <UserTable users={filteredSortedUsers} />
 
-                        <div className="submit-container">
-                            <Link className="button" to={"/AddUser"}>Add New User</Link>
-                        </div>
                     </div>
                 </div>
             </div>

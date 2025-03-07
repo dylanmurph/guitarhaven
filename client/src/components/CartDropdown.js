@@ -6,7 +6,7 @@ export default class CartDropdown extends Component {
     render() {
         return (
             <div className="cart-container">
-                <h2 className="cart-title">Your Cart</h2>
+                <h2 className="cart-title">Cart</h2>
                 <div className="cart-items">
                     <p>No items in cart</p>
                 </div>

@@ -7,7 +7,7 @@ html,body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-button, input{
+button, input, select, textarea {
   font-family: 'Montserrat', Arial, sans-serif;
 }
 
