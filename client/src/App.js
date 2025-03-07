@@ -17,9 +17,11 @@ import DisplayAllUsers from "./components/users/DisplayAllUsers"
 import DeleteUser from "./components/users/DeleteUser"
 import StorePage from "./components/StorePage"
 import ForgotPassword from "./components/pages/ForgotPassword"
+import DisplayPurchases from "./components/purchases/DisplayPurchases";
 
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
 import Register from "./components/pages/Register";
+
 
 
 if (typeof localStorage.accessLevel === "undefined")
@@ -51,6 +53,8 @@ export default class App extends Component {
 
                             <Route exact path="/displayAllUsers" component={DisplayAllUsers}/>
                             <Route exact path="/deleteUser/:id" component={DeleteUser}/>
+
+                            <Route exact path="/displayPurchases" component={DisplayPurchases}/>
 
                             <Route exact path="/store" component={StorePage} />
                             <Route path="/store/:category" component={StorePage}/>

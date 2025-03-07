@@ -9,6 +9,7 @@ export default class AdminPage extends Component {
                 <h1>Admin Dashboard</h1>
                 <Link className="button" to={"/DisplayAllGuitars"}>View Guitars</Link>
                 <Link className="button" to={"/DisplayAllUsers"}>View Users</Link>
+                <Link className="button" to={"/DisplayPurchases"}>View Purchases/Returns</Link>
             </div>
         )
     }
