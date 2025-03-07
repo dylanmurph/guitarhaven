@@ -1,8 +1,9 @@
-import React, { Component } from "react"
-import { Redirect, Link } from "react-router-dom"
+import React, {Component} from "react"
+import {Redirect, Link} from "react-router-dom"
 import LinkInClass from "../LinkInClass"
 import axios from "axios"
-import {ACCESS_LEVEL_ADMIN, SERVER_HOST } from "../../config/global_constants"
+import {ACCESS_LEVEL_ADMIN, SERVER_HOST} from "../../config/global_constants"
+import "../../css/form.css"
 
 export default class EditGuitar extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ export default class EditGuitar extends Component {
     componentDidMount() {
         this.inputToFocus.focus()
 
-        axios.get(`${SERVER_HOST}/guitars/${this.props.match.params.id}`, {headers:{"authorization":localStorage.token}})
+        axios.get(`${SERVER_HOST}/guitars/${this.props.match.params.id}`, {headers: {"authorization": localStorage.token}})
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
@@ -44,7 +45,7 @@ export default class EditGuitar extends Component {
     }
 
     handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({[e.target.name]: e.target.value})
     }
 
     handleSubmit = (e) => {
@@ -59,14 +60,14 @@ export default class EditGuitar extends Component {
             image: this.state.image,
         }
 
-        axios.put(`${SERVER_HOST}/guitars/${this.props.match.params.id}`, guitarObject, {headers:{"authorization":localStorage.token}})
+        axios.put(`${SERVER_HOST}/guitars/${this.props.match.params.id}`, guitarObject, {headers: {"authorization": localStorage.token}})
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
                         console.log(res.data.errorMessage)
                     } else {
                         console.log("Record updated")
-                        this.setState({ redirectToDisplayAllGuitars: true })
+                        this.setState({redirectToDisplayAllGuitars: true})
                     }
                 } else {
                     console.log("Record not updated")
@@ -77,13 +78,16 @@ export default class EditGuitar extends Component {
     render() {
         return (
             <div className="form-container">
-                {this.state.redirectToDisplayAllGuitars ? <Redirect to="/DisplayAllGuitars" /> : null}
+                {this.state.redirectToDisplayAllGuitars ? <Redirect to="/DisplayAllGuitars"/> : null}
 
-                <form>
+                <form className="form">
+                    <h2>Register</h2>
+
                     <div>
                         <label>
                             Name:
                             <input
+                                className="input-field"
                                 type="text"
                                 name="name"
                                 value={this.state.name}
@@ -99,6 +103,7 @@ export default class EditGuitar extends Component {
                         <label>
                             Model:
                             <input
+                                className="input-field"
                                 type="text"
                                 name="model"
                                 value={this.state.model}
@@ -111,6 +116,7 @@ export default class EditGuitar extends Component {
                         <label>
                             Year:
                             <input
+                                className="input-field"
                                 type="number"
                                 name="year"
                                 value={this.state.year}
@@ -123,6 +129,7 @@ export default class EditGuitar extends Component {
                         <label>
                             Price:
                             <input
+                                className="input-field"
                                 type="number"
                                 name="price"
                                 value={this.state.price}
@@ -151,6 +158,7 @@ export default class EditGuitar extends Component {
                         <label>
                             Image:
                             <input
+                                className="input-field"
                                 type="text"
                                 name="image"
                                 value={this.state.image}
@@ -159,8 +167,8 @@ export default class EditGuitar extends Component {
                         </label>
                     </div>
 
-                    <LinkInClass value="Save Changes" className="green-button" onClick={this.handleSubmit}/>
-                    <Link className="red-button" to="/DisplayAllGuitars">Cancel</Link>
+                    <LinkInClass className="submit-button" value="Save Changes" onClick={this.handleSubmit}/>
+                    <Link className="submit-button" to="/DisplayAllGuitars">Cancel</Link>
                 </form>
             </div>
         )

@@ -131,9 +131,7 @@ export default class AccountDropdown extends Component {
 
                 <div className="text-container">
                     <p className="account-text">Don't have an account?</p>
-                    <button type="button" className="submit-button">
-                        Register
-                    </button>
+                    <Link to="register" className="submit-button">Register</Link>
                 </div>
             </form>
         )

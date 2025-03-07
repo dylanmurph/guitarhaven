@@ -14,12 +14,12 @@ import DeleteGuitar from "./components/guitars/DeleteGuitar"
 import DisplayAllGuitars from "./components/guitars/DisplayAllGuitars"
 import AddGuitar from "./components/guitars/AddGuitar"
 import DisplayAllUsers from "./components/users/DisplayAllUsers"
-import EditUser from "./components/users/EditUser"
 import DeleteUser from "./components/users/DeleteUser"
-import AddUser from "./components/users/AddUser"
 import StorePage from "./components/StorePage"
+import ForgotPassword from "./components/pages/ForgotPassword"
 
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
+import Register from "./components/pages/Register";
 
 
 if (typeof localStorage.accessLevel === "undefined")
@@ -50,12 +50,13 @@ export default class App extends Component {
                             <Route exact path="/AddGuitar" component={AddGuitar}/>
 
                             <Route exact path="/displayAllUsers" component={DisplayAllUsers}/>
-                            <Route exact path="/editUser/:id" component={EditUser}/>
                             <Route exact path="/deleteUser/:id" component={DeleteUser}/>
-                            <Route exact path="/AddUser" component={AddUser}/>
 
                             <Route exact path="/store" component={StorePage} />
                             <Route path="/store/:category" component={StorePage}/>
+
+                            <Route exact path="/forgot-password" component={ForgotPassword}/>
+                            <Route path="/register" component={Register}/>
 
                             <Route path="*" component={() => <h3>Invalid URL. Webpage does not exist</h3>}/>
                         </Switch>

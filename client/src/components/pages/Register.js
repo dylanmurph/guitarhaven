@@ -1,13 +1,12 @@
-import React, {Component} from "react"
-import {Redirect, Link} from "react-router-dom"
-import LinkInClass from "../LinkInClass"
-import axios from "axios"
-import {ACCESS_LEVEL_ADMIN, SERVER_HOST} from "../../config/global_constants"
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import axios from 'axios'
+import "../../css/form.css"
+import { SERVER_HOST } from '../../config/global_constants'
 
-export default class AddUser extends Component {
+export default class Register extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             firstName: "",
             lastName: "",
@@ -17,24 +16,20 @@ export default class AddUser extends Component {
             address2: "",
             county: "",
             phone: "",
-            accessLevel: "",
             image: "",
-            redirectToDisplayAllUsers: localStorage.accessLevel < ACCESS_LEVEL_ADMIN
+            confirmPassword: "",
+            isRegistered: false,
         }
     }
 
-    componentDidMount() {
-        this.inputToFocus.focus()
-    }
-
     handleChange = (e) => {
-        this.setState({[e.target.name]: e.target.value})
+        this.setState({ [e.target.name]: e.target.value })
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
 
-        const userObject = {
+        const newUser = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email,
@@ -42,25 +37,27 @@ export default class AddUser extends Component {
             address1: this.state.address1,
             address2: this.state.address2,
             county: this.state.county,
-            phone: Number(this.state.phone),
-            accessLevel: this.state.accessLevel,
+            phone: this.state.phone,
+            accessLevel: 1,
             image: this.state.image
         }
 
-        axios.post(`${SERVER_HOST}/users`, userObject,{headers:{"authorization":localStorage.token}})
+        axios.post(`${SERVER_HOST}/users/register`, newUser)
             .then(res => {
-                if (res.data) {
-                    if (res.data.errorMessage) {
-                        console.log(res.data.errorMessage)
-                    } else {
-                        console.log("Record added")
-                        this.setState({redirectToDisplayAllUsers: true})
-                    }
+                if (res.data && res.data.errorMessage) {
+                    console.log(res.data.errorMessage)
                 } else {
-                    console.log("Record not added")
+                    console.log("User registered successfully")
+
+                    sessionStorage.name = `${this.state.firstName} ${this.state.lastName}`
+                    sessionStorage.accessLevel = 1
+
+                    this.setState({ isRegistered: true })
                 }
             })
-            .catch(err => console.error("Error adding user:", err))
+            .catch(error => {
+                console.log("Error during registration:", error)
+            })
     }
 
     render() {
@@ -71,89 +68,91 @@ export default class AddUser extends Component {
             "Monaghan", "Offaly", "Roscommon", "Sligo", "Tipperary", "Tyrone",
             "Waterford", "Westmeath", "Wexford", "Wicklow"
         ]
+        return (
+            <div className="form-container">
+                {this.state.isRegistered ? <Redirect to="/home" /> : null}
 
-        return (<div className="form-container">
-            {this.state.redirectToDisplayAllUsers ? <Redirect to="/DisplayAllUsers"/> : null}
+                <form className="form" onSubmit={this.handleSubmit}>
+                    <h2>Register</h2>
 
-            <form>
-                <div>
-                    <label>
-                        First Name:
+                    <div>
                         <input
+                            className="input-field"
                             type="text"
                             name="firstName"
+                            placeholder="First Name"
                             value={this.state.firstName}
                             onChange={this.handleChange}
-                            ref={(input) => {
-                                this.inputToFocus = input
-                            }}
+                            required
                         />
-                    </label>
-                </div>
-
-                <div>
-                    <label>
-                        Last Name:
+                    </div>
+                    <div>
                         <input
+                            className="input-field"
                             type="text"
                             name="lastName"
+                            placeholder="Last Name"
                             value={this.state.lastName}
                             onChange={this.handleChange}
+                            required
                         />
-                    </label>
-                </div>
-
-                <div>
-                    <label>
-                        Email:
+                    </div>
+                    <div>
                         <input
-                            type="text"
+                            className="input-field"
+                            type="email"
                             name="email"
+                            placeholder="Email"
                             value={this.state.email}
                             onChange={this.handleChange}
+                            required
                         />
-                    </label>
-                </div>
-
-                <div>
-                    <label>
-                        Password:
+                    </div>
+                    <div>
                         <input
-                            type="text"
+                            className="input-field"
+                            type="password"
                             name="password"
+                            placeholder="Password"
                             value={this.state.password}
                             onChange={this.handleChange}
+                            required
                         />
-                    </label>
-                </div>
-
-                <div>
-                    <label>
-                        Address Line 1:
+                    </div>
+                    <div>
                         <input
+                            className="input-field"
+                            type="password"
+                            name="confirmPassword"
+                            placeholder="Confirm Password"
+                            value={this.state.confirmPassword}
+                            onChange={this.handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <input
+                            className="input-field"
                             type="text"
                             name="address1"
+                            placeholder="Address Line 1"
                             value={this.state.address1}
                             onChange={this.handleChange}
+                            required
                         />
-                    </label>
-                </div>
-
-                <div>
-                    <label>
-                        Address Line 2:
+                    </div>
+                    <div>
                         <input
+                            className="input-field"
                             type="text"
                             name="address2"
+                            placeholder="Address Line 2"
                             value={this.state.address2}
                             onChange={this.handleChange}
+                            required
                         />
-                    </label>
-                </div>
-
-                <div>
-                    <label>
-                        County:
+                    </div>
+                    <div>
                         <select
                             name="county"
                             value={this.state.county}
@@ -164,47 +163,33 @@ export default class AddUser extends Component {
                                 <option key={county} value={county}>{county}</option>
                             ))}
                         </select>
-                    </label>
-                </div>
-
-                <div>
-                    <label>
-                        Phone Number:
+                    </div>
+                    <div>
                         <input
+                            className="input-field"
                             type="number"
                             name="phone"
+                            placeholder="Phone Number"
                             value={this.state.phone}
                             onChange={this.handleChange}
+                            required
                         />
-                    </label>
-                </div>
-
-                <div>
-                    <label>
-                        Access Level:
+                    </div>
+                    <div>
                         <input
-                            type="number"
-                            name="accessLevel"
-                            value={this.state.accessLevel}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Image:
-                        <input
+                            className="input-field"
                             type="text"
                             name="image"
+                            placeholder="Image"
                             value={this.state.image}
                             onChange={this.handleChange}
+                            required
                         />
-                    </label>
-                </div>
+                    </div>
 
-                <LinkInClass value="Add User" className="green-button" onClick={this.handleSubmit}/>
-                <Link className="red-button" to="/DisplayAllUsers">Cancel</Link>
-            </form>
-        </div>)
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        )
     }
 }

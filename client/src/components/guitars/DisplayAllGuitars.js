@@ -81,36 +81,36 @@ export default class DisplayAllGuitars extends Component
             localStorage.accessLevel >= ACCESS_LEVEL_ADMIN
                 ?
             <div>
-            <div className="filter-sort-search-bar">
-                <input className="search-bar-table" type="text"
-                       placeholder="Search by Name or Model"
-                       value={this.state.searchValue}
-                       onChange={this.handleSearch}/>
+                <div className="filter-sort-search-bar">
+                    <input className="search-bar-table" type="text"
+                           placeholder="Search by Name or Model"
+                           value={this.state.searchValue}
+                           onChange={this.handleSearch}/>
 
-                <select className="filter-dropdown" onChange={this.handleSort} value={this.state.sortChoice}>
-                    <option value="all">Default Sorting</option>
-                    <option value="priceAsc">Price Low to High</option>
-                    <option value="priceDesc">Price High to Low</option>
-                    <option value="yearDesc">Year Newest</option>
-                    <option value="yearAsc">Year Oldest</option>
-                </select>
+                    <select className="filter-dropdown" onChange={this.handleSort} value={this.state.sortChoice}>
+                        <option value="all">Default Sorting</option>
+                        <option value="priceAsc">Price Low to High</option>
+                        <option value="priceDesc">Price High to Low</option>
+                        <option value="yearDesc">Year Newest</option>
+                        <option value="yearAsc">Year Oldest</option>
+                    </select>
 
-                <select className="sort-dropdown" onChange={this.handleFilter} value={this.state.filterType}>
-                    <option value="all">All Types</option>
-                    <option value="electric">Electric</option>
-                    <option value="acoustic">Acoustic</option>
-                    <option value="bass">Bass</option>
-                </select>
-            </div>
+                    <select className="sort-dropdown" onChange={this.handleFilter} value={this.state.filterType}>
+                        <option value="all">All Types</option>
+                        <option value="electric">Electric</option>
+                        <option value="acoustic">Acoustic</option>
+                        <option value="bass">Bass</option>
+                    </select>
 
-            <div className="table-container">
-                <div>
-                    <GuitarTable guitars={filteredSortedGuitars} />
-
-                    <div className="submit-container">
+                    <div className="add-guitar">
                         <Link className="button" to={"/AddGuitar"}>Add New Guitar</Link>
                     </div>
                 </div>
+
+                <div className="table-container">
+                    <div>
+                        <GuitarTable guitars={filteredSortedGuitars}/>
+                    </div>
             </div>
             </div>
                 :
