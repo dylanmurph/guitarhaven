@@ -7,6 +7,7 @@
   "year": 1973,
   "price": 1577,
   "type": "Electric",
+  "stock": 1,
   "image": "/uploads/guitars/fenderAmericanProfessionalTelecasterDeluxeShawbucker.jpg"
 },
 {
@@ -18,6 +19,7 @@
   "year": 2019,
   "price": 1921,
   "type": "Electric",
+  "stock": 1,
   "image": "/uploads/guitars/fenderAmericanProfessional2HSSStratocaster.jpg"
 },
 {
@@ -29,6 +31,7 @@
   "year": 2025,
   "price": 757,
   "type": "Electric",
+  "stock": 7,
   "image": "/uploads/guitars/yamahaRevstarStandardRSS20FLG.jpg"
 },
 {
@@ -40,6 +43,7 @@
   "year": 2022,
   "price": 304,
   "type": "Electric",
+  "stock": 105,
   "image": "/uploads/guitars/yamahaPA112VMPacifica.jpg"
 },
 {
@@ -51,6 +55,7 @@
   "year": 2024,
   "price": 315,
   "type": "Electric",
+  "stock": 45,
   "image": "/uploads/guitars/gretschG2210SolidBodyStreamliner.jpg"
 },
 {
@@ -62,6 +67,7 @@
   "year": 2024,
   "price": 501,
   "type": "Electric",
+  "stock": 30,
   "image": "/uploads/guitars/gretschG5220ElectromaticJetBT.png"
 },
 {
@@ -73,6 +79,7 @@
   "year": 2020,
   "price": 699,
   "type": "Electric",
+  "stock": 1,
   "image": "/uploads/guitars/schecterDemon6.png"
 },
 {
@@ -84,6 +91,7 @@
   "year": 2016,
   "price": 499,
   "type": "Electric",
+  "stock": 2,
   "image": "/uploads/guitars/schecterC6PlusHH.jpg"
 },
 {
@@ -95,6 +103,7 @@
   "year": 2010,
   "price": 2559,
   "type": "Acoustic",
+  "stock": 2,
   "image": "/uploads/guitars/taylor618EElectro-Acoustic.jpg"
 },
 {
@@ -106,6 +115,7 @@
   "year": 2003,
   "price": 1102,
   "type": "Acoustic",
+  "stock": 2,
   "image": "/uploads/guitars/yamahaLL16ARE.jpg"
 },
 {
@@ -117,6 +127,7 @@
   "year": 2015,
   "price": 559,
   "type": "Acoustic",
+  "stock": 1,
   "image": "/uploads/guitars/takamineGSeriesGJ72CE.png"
 },
 {
@@ -128,6 +139,7 @@
   "year": 1996,
   "price": 3699,
   "type": "Acoustic",
+  "stock": 4,
   "image": "/uploads/guitars/taylor814CE.jpg"
 },
 {
@@ -139,6 +151,7 @@
   "year": 2021,
   "price": 799,
   "type": "Electric",
+  "stock": 1,
   "image": "/uploads/guitars/ibanezRG550.jpg"
 },
 {
@@ -150,6 +163,7 @@
   "year": 2020,
   "price": 2499,
   "type": "Electric",
+  "stock": 2,
   "image": "/uploads/guitars/gibsonLesPaulStandard50s.jpg"
 },
 {
@@ -161,6 +175,7 @@
   "year": 2023,
   "price": 749,
   "type": "Electric",
+  "stock": 1,
   "image": "/uploads/guitars/prsSECustom24.jpg"
 },
 {
@@ -172,6 +187,7 @@
   "year": 2022,
   "price": 1299,
   "type": "Electric",
+  "stock": 2,
   "image": "/uploads/guitars/fenderAmericanPerformerStratocaster.jpg"
 },
 {
@@ -183,6 +199,7 @@
   "year": 2021,
   "price": 449,
   "type": "Acoustic",
+  "stock": 7,
   "image": "/uploads/guitars/yamahaA1M.jpg"
 },
 {
@@ -194,6 +211,7 @@
   "year": 2019,
   "price": 2999,
   "type": "Acoustic",
+  "stock": 3,
   "image": "/uploads/guitars/martinD28.jpg"
 },
 {
@@ -205,6 +223,7 @@
   "year": 2020,
   "price": 1599,
   "type": "Acoustic",
+  "stock": 1,
   "image": "/uploads/guitars/taylor324ce.jpg"
 },
 {
@@ -216,6 +235,7 @@
   "year": 2023,
   "price": 849,
   "type": "Electric",
+  "stock": 15,
   "image": "/uploads/guitars/gretschG2622Streamliner.jpg"
 },
 {
@@ -227,6 +247,7 @@
   "year": 2021,
   "price": 1899,
   "type": "Bass",
+  "stock": 2,
   "image": "/uploads/guitars/fenderJazzBass.jpg"
 },
 {
@@ -238,6 +259,7 @@
   "year": 2019,
   "price": 379,
   "type": "Bass",
+  "stock": 1,
   "image": "/uploads/guitars/squierVintageModifiedJazzBass.jpg"
 },
 {
@@ -249,6 +271,7 @@
   "year": 2021,
   "price": 1899,
   "type": "Bass",
+  "stock": 10,
   "image": "/uploads/guitars/fenderPrecisionBass.jpg"
 },
 {
@@ -260,6 +283,7 @@
   "year": 2022,
   "price": 2199,
   "type": "Bass",
+  "stock": 1,
   "image": "/uploads/guitars/musicManStingRay4HH.jpg"
 },
 {
@@ -271,6 +295,7 @@
   "year": 2020,
   "price": 799,
   "type": "Bass",
+  "stock": 1,
   "image": "/uploads/guitars/ibanezSR505E.jpg"
 },
 {
@@ -282,6 +307,7 @@
   "year": 2021,
   "price": 1799,
   "type": "Bass",
+  "stock": 2,
   "image": "/uploads/guitars/rickenbacker4003.jpg"
 },
 {
@@ -293,6 +319,7 @@
   "year": 2021,
   "price": 799,
   "type": "Bass",
+  "stock": 4,
   "image": "/uploads/guitars/schecterStilettoStudio4.jpg"
 },
 {
@@ -304,5 +331,6 @@
   "year": 2022,
   "price": 549,
   "type": "Bass",
+  "stock": 3,
   "image": "/uploads/guitars/epiphoneThunderbirdIV.jpg"
 }]

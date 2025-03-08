@@ -14,6 +14,22 @@
   "accessLevel": 2
 },
 {
+    "_id": {
+      "$oid": "67cc72dc43644e7840886a25"
+    },
+    "accessLevel": 2,
+    "firstName": "Matthew",
+    "lastName": "Tomkins",
+    "email": "d00272125@student.dkit.ie",
+    "password": "$2b$04$zkUU.LBnlveyqx7pIEwE2.99B6NVlbGlA0UxNBu5Qlz0rqFvGg6Ba",
+    "address1": "123 Coolamber Park",
+    "address2": "Knocklyon",
+    "county": "Dublin",
+    "phone": 864099962,
+    "image": "/uploads/users/matt_tomk.jpg",
+    "__v": 0
+},
+{
   "_id": {
     "$oid": "67c8d0bd3e113434bca9069b"
   },

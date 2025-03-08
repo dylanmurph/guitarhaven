@@ -11,8 +11,9 @@ export default class GuitarTableRow extends Component
                 <td>{this.props.guitar.name}</td>
                 <td>{this.props.guitar.model}</td>
                 <td>{this.props.guitar.year}</td>
-                <td>{this.props.guitar.price}</td>
+                <td>€{this.props.guitar.price}</td>
                 <td>{this.props.guitar.type}</td>
+                <td>{this.props.guitar.stock}</td>
                 <td><img src={`${SERVER_HOST}${this.props.guitar.image}`} alt={this.props.guitar.name} className="guitar-image"/></td>
                 <td>
                     <Link className="button" to={"/EditGuitar/" + this.props.guitar._id}>Edit</Link>
