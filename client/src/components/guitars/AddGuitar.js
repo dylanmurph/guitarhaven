@@ -14,6 +14,7 @@ export default class AddGuitar extends Component {
             year: "",
             price: "",
             type: "",
+            stock:0,
             image: "",
             redirectToDisplayAllGuitars: localStorage.accessLevel < ACCESS_LEVEL_ADMIN
         }
@@ -36,6 +37,7 @@ export default class AddGuitar extends Component {
             year: Number(this.state.year),
             price: Number(this.state.price),
             type: this.state.type,
+            stock: Number(this.state.stock),
             image: this.state.image
         }
 
@@ -124,6 +126,18 @@ export default class AddGuitar extends Component {
                             <option value="Electric">Electric</option>
                             <option value="Bass">Bass</option>
                         </select>
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        Stock:
+                        <input
+                            type="number"
+                            name="stock"
+                            value={this.state.stock}
+                            onChange={this.handleChange}
+                        />
                     </label>
                 </div>
 

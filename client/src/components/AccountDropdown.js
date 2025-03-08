@@ -28,7 +28,7 @@ export default class AccountDropdown extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
 
-        axios.defaults.withCredentials = true
+
         axios.post(`${SERVER_HOST}/users/login/${this.state.email}/${this.state.password}`)
             .then((res) => {
                 if(res.data)
@@ -70,7 +70,7 @@ export default class AccountDropdown extends Component {
                     <p className="account-text">Welcome, {name}</p>
                 </div>
 
-                <Link className="submit-button" to="/purchase-history">
+                <Link className="submit-button" to="/prevPurchasesDisplay">
                    Your Purchases
                 </Link>
 

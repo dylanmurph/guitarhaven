@@ -15,6 +15,7 @@ export default class EditGuitar extends Component {
             year: "",
             price: "",
             type: "",
+            stock:0,
             image: "",
             redirectToDisplayAllGuitars: localStorage.accessLevel < ACCESS_LEVEL_ADMIN
         }
@@ -35,6 +36,7 @@ export default class EditGuitar extends Component {
                             year: res.data.year,
                             price: res.data.price,
                             type: res.data.type,
+                            stock: res.data.stock,
                             image: res.data.image
                         })
                     }
@@ -56,6 +58,7 @@ export default class EditGuitar extends Component {
             model: this.state.model,
             year: Number(this.state.year),
             price: Number(this.state.price),
+            stock: Number(this.state.stock),
             type: this.state.type,
             image: this.state.image,
         }
@@ -151,6 +154,19 @@ export default class EditGuitar extends Component {
                                 <option value="Electric">Electric</option>
                                 <option value="Electric">Base</option>
                             </select>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            Stock:
+                            <input
+                                className="input-field"
+                                type="number"
+                                name="stock"
+                                value={this.state.stock}
+                                onChange={this.handleChange}
+                            />
                         </label>
                     </div>
 
