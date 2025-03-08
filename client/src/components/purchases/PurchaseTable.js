@@ -18,7 +18,7 @@ export default class PurchaseTable extends Component
                     <th>Address</th>
                     <th>Phone</th>
                     <th>Returned</th>
-                    <th>ReturnDate</th>
+                    <th>Return Date</th>
                 </tr>
                 </thead>
 
