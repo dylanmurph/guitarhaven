@@ -1,5 +1,4 @@
 import React, {Component} from "react"
-import {Link} from "react-router-dom"
 import axios from "axios"
 import PrevPurchaseTable from "./PrevPurchaseTable"
 import { ACCESS_LEVEL_NORMAL_USER, SERVER_HOST} from "../../config/global_constants"
@@ -35,9 +34,8 @@ export default class PrevPurchasesDisplay extends Component
                     }
                     else
                     {
-                        console.log("Records read")
-                        //to filter when admin views, has no effect on customers. Still secure in routes/purchases when customer views -matt
-                        const userPurchases = res.data.filter(purchase => (purchase.customerFirstName+" "+purchase.customerLastName) === UserName);
+                        const userPurchases = res.data.filter(purchase =>
+                            (purchase.customerFirstName+" "+purchase.customerLastName) === UserName)
                         this.setState({purchases: userPurchases})
                     }
                 }
@@ -62,13 +60,6 @@ export default class PrevPurchasesDisplay extends Component
         let filteredPurchases = purchases.filter(purchase => {
             const address =purchase.customerAddress1+" "+purchase.customerAddress2+" "+purchase.customerCounty
             const customerName =purchase.customerFirstName+" "+purchase.customerLastName
-            let rDate
-            if(purchase.returnDate!==null){
-                rDate = purchase.returnDate
-            }else{
-
-                rDate = "N/A"
-            }
 
             return purchase.productName.toLowerCase().includes(searchValue.toLowerCase()) ||
                 purchase.productModel.toLowerCase().includes(searchValue.toLowerCase()) ||
@@ -77,10 +68,7 @@ export default class PrevPurchasesDisplay extends Component
                 purchase.customerEmail.toLowerCase().includes(searchValue.toLowerCase()) ||
                 purchase.customerPhone.toString().toLowerCase().includes(searchValue.toLowerCase()) ||
                 address.toLowerCase().includes(searchValue.toLowerCase()) ||
-                rDate.toLowerCase().includes(searchValue.toLowerCase())
-
-
-
+                purchase.returnDate.toLowerCase().includes(searchValue.toLowerCase())
         })
 
         if (filterType !== "all") {
@@ -114,9 +102,7 @@ export default class PrevPurchasesDisplay extends Component
     {
         const filteredSortedPurchases = this.filterSortPurchases()
         return (
-
-            localStorage.accessLevel >= ACCESS_LEVEL_NORMAL_USER
-                ?
+            localStorage.accessLevel >= ACCESS_LEVEL_NORMAL_USER ?
                 <div>
                     <div className="filter-sort-search-bar">
                         <input className="search-bar-table" type="text"
@@ -147,8 +133,7 @@ export default class PrevPurchasesDisplay extends Component
                         </div>
                     </div>
                 </div>
-                :
-                null
+                : null
         )
     }
 }

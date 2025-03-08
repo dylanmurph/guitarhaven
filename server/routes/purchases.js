@@ -89,6 +89,13 @@ router.post(`/purchases`, (req, res) =>
     })
 })
 
+router.put(`/purchases/:id`, (req, res) => {
+    purchasesModel.findByIdAndUpdate(req.params.id, {$set: req.body}, (error, data) => {
+        res.json(data)
+        console.log("Returned Purchase")
+    })
+})
+
 
 
 
