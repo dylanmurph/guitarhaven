@@ -17,9 +17,14 @@ router.get(`/purchases`, (req, res) =>
         }
         else
         {
-            if(decodedToken.accessLevel >= process.env.ACCESS_LEVEL_NORMAL_USER)
+            if(decodedToken.accessLevel >= process.env.ACCESS_LEVEL_ADMIN)
             {
                 purchasesModel.find((error, data) =>
+                {
+                    res.json(data)
+                })
+            }else if(decodedToken.accessLevel >= process.env.ACCESS_LEVEL_NORMAL_USER){
+                purchasesModel.find({ customerEmail: decodedToken.email },(error, data) =>
                 {
                     res.json(data)
                 })

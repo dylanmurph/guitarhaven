@@ -21,6 +21,7 @@ import DisplayPurchases from "./components/purchases/DisplayPurchases";
 
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
 import Register from "./components/pages/Register";
+import PrevPurchasesDisplay from "./components/prevPurchases/PrevPurchasesDisplay";
 
 
 
@@ -55,6 +56,7 @@ export default class App extends Component {
                             <Route exact path="/deleteUser/:id" component={DeleteUser}/>
 
                             <Route exact path="/displayPurchases" component={DisplayPurchases}/>
+                            <Route exact path="/prevPurchasesDisplay" component={PrevPurchasesDisplay}/>
 
                             <Route exact path="/store" component={StorePage} />
                             <Route path="/store/:category" component={StorePage}/>
