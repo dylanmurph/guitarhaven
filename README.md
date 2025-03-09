@@ -22,6 +22,8 @@ Admins can only be created from within the database itself. Once given `accessLe
 Users can view their own purchase history from the account dropdown, edit their own account details, or simply log out.  
   
 There is a **search and sort feature** for all tables and store pages where the user can filter, search, and sort for what they are looking for.  
+
+Paypal sandbox has been implemented for purchases, which then records the purchase details into the purchases collection
   
 ## @Authors:  
 - [Dylan Murphy - D00223094](https://github.com/dylanmurph)  
