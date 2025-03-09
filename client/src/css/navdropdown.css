@@ -65,10 +65,50 @@
 }
 
 .cart-container{
-    width: 200%;
+    width: 180%;
     color: white;
 }
 
 .cart-container table{
+    min-width: 180%;
     all: unset;
+}
+
+.cart-container tr:hover{
+    background-color: unset;
+}
+
+.cart-container .cart-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    background-color: white;
+}
+.cart-container img{
+    height: 100%;
+}
+.cart-container h3{
+    text-align: center;
+}
+
+.cart-remove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px 8px;
+    color: #f60303;
+    background-color: #790000;
+    border-radius: 15px;
+    border: thin solid #500a0a;
+    box-sizing: border-box;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cart-remove:hover{
+    cursor: pointer;
+    opacity: 0.8;
 }
