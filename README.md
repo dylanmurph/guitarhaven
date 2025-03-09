@@ -4,7 +4,16 @@
   
 You must have a MongoDB database: **guitarhaven**    
 Import collections: **guitars**, **users**, **purchases** which are saved in the root folder.  
-  
+Install depencendies in root, client and server,
+```bash
+npm install
+cd client
+npm install
+cd ..
+cd server
+npm install
+cd ..
+```
 From the root directory:    
 ```bash  
 npm run start:all  
