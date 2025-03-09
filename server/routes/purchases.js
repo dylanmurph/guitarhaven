@@ -71,16 +71,18 @@ router.put(`/purchases/:id`, (req, res) => {
 })
 
 const createNewPurchaseDocument = (req, res, next) => {
-
-    const {paypalPaymentID, totalPayment} = req.body
-
+    const { paypalPaymentID, totalPayment } = req.body
     const userEmail = req.decodedToken.email
 
-    usersModel.findOne({email: userEmail})
+    let userData
+
+    usersModel.findOne({ email: userEmail })
         .then(user => {
             if (!user) {
-                return res.status(404).json({errorMessage: "User not found"})
+                return res.status(404).json({ errorMessage: "User not found" })
             }
+
+            userData = user
 
             const purchaseDetails = {
                 purchaseDate: new Date().toISOString(),
@@ -102,11 +104,15 @@ const createNewPurchaseDocument = (req, res, next) => {
             return newPurchase.save()
         })
         .then(newPurchase => {
-            res.status(201).json({success: true, purchase: newPurchase})
+            return usersModel.updateOne({ email: userData.email }, { $set: { cart: [] } })
+                .then(() => newPurchase)
+        })
+        .then(newPurchase => {
+            res.status(201).json({ success: true, purchase: newPurchase })
         })
         .catch(error => {
-            console.error("Error creating purchase:", error)
-            res.status(500).json({errorMessage: "Internal server error"})
+            console.error("Error creating purchase:", error);
+            res.status(500).json({ errorMessage: "Internal server error" })
         })
 }
 

@@ -45,6 +45,7 @@ export default class CartDropdown extends Component {
                             return {
                                 ...item,
                                 guitarName: guitarRes.data.name,
+                                guitarPrice: guitarRes.data.price,
                                 guitarImage: `${SERVER_HOST}${guitarRes.data.image}`,
                             }
                         })
@@ -88,25 +89,24 @@ export default class CartDropdown extends Component {
         return (
             <div className="cart-table">
                 <table>
-                    <tbody>
                     {cart.map(item => (
                         <tr key={item.guitarId}>
                             <td>
-                                <img src={item.guitarImage} alt={item.guitarName} width="50"/>
+                                <div className="cart-img-container">
+                                <img className="cart-img" src={item.guitarImage} alt={item.guitarName}/>
+                             </div>
                             </td>
                             <td>{item.guitarName}</td>
                             <td>{item.quantity}</td>
+                            <td>€{item.guitarPrice}</td>
                             <td>
-                                <button onClick={() => this.handleRemoveItem(item.guitarId)}>Remove</button>
+                                <button className="cart-remove" onClick={() => this.handleRemoveItem(item.guitarId)}>X</button>
                             </td>
                         </tr>
                     ))}
-                    </tbody>
                 </table>
-                <p>Total Price: €{totalPrice}</p>
-                <Link to={{ pathname: "/payment",state: { price: totalPrice },}}>
-                    Proceed to checkout
-                </Link>
+                <h3>Total - €{totalPrice}</h3>
+                <Link className="submit-button" to={{ pathname: "/payment",state: { price: totalPrice },}}>Proceed to checkout</Link>
             </div>
         )
     }
