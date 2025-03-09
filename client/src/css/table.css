@@ -78,3 +78,17 @@ tr:hover {
     all: unset;
     cursor: pointer;
 }
+
+.return-button:hover{
+    background-color: #ff2929;
+    color: #000000;
+}
+
+.return-button{
+    color: #ea0101;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #676767;
+    cursor: pointer;
+    outline: none;
+}
