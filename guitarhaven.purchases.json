@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "67cb4d493dc5fb860082684c"
+  },
+  "productName": "Fender",
+  "productModel": "Telecaster Deluxe Shawbucker",
+  "productPrice": 1577,
+  "purchaseDate": "2024-03-07",
+  "returned": true,
+  "returnDate": "3/9/2025",
+  "customerFirstName": "Liam",
+  "customerLastName": "Doyle",
+  "customerEmail": "liam.doyle@gmail.com",
+  "customerAddress1": "5 Park Rd",
+  "customerAddress2": "Main St",
+  "customerCounty": "Kerry",
+  "customerPhone": 871127847
+},
+{
+  "_id": {
+    "$oid": "67cb4d493dc5fb860082684d"
+  },
+  "productName": "Yamaha Revstar",
+  "productModel": "Revstar Standard RSS20FLG",
+  "productPrice": 757,
+  "purchaseDate": "2024-02-25",
+  "returned": false,
+  "returnDate": null,
+  "customerFirstName": "Patrick",
+  "customerLastName": "Landy",
+  "customerEmail": "p.landy@hotmail.com",
+  "customerAddress1": "23 Woodgrove Heights",
+  "customerAddress2": "Duleek",
+  "customerCounty": "Meath",
+  "customerPhone": 871244536
+},
+{
+  "_id": {
+    "$oid": "67cb4d493dc5fb860082684e"
+  },
+  "productName": "Taylor 618E",
+  "productModel": "618E Electro-Acoustic",
+  "productPrice": 2559,
+  "purchaseDate": "2024-01-15",
+  "returned": false,
+  "returnDate": null,
+  "customerFirstName": "Patrick",
+  "customerLastName": "Landy",
+  "customerEmail": "p.landy@hotmail.com",
+  "customerAddress1": "23 Woodgrove Heights",
+  "customerAddress2": "Duleek",
+  "customerCounty": "Meath",
+  "customerPhone": 871244536
+},
+{
+  "_id": {
+    "$oid": "67cb4d493dc5fb860082684f"
+  },
+  "productName": "Gibson Les Paul",
+  "productModel": "Les Paul Standard '50s",
+  "productPrice": 2499,
+  "purchaseDate": "2023-12-20",
+  "returned": false,
+  "returnDate": null,
+  "customerFirstName": "Sean",
+  "customerLastName": "Sullivan",
+  "customerEmail": "sean.sullivan@gmail.com",
+  "customerAddress1": "30 Market St",
+  "customerAddress2": "Church St",
+  "customerCounty": "Clare",
+  "customerPhone": 871301437
+},
+{
+  "_id": {
+    "$oid": "67cb4d493dc5fb8600826850"
+  },
+  "productName": "Ibanez SR Series",
+  "productModel": "SR505E",
+  "productPrice": 799,
+  "purchaseDate": "2024-02-10",
+  "returned": false,
+  "returnDate": null,
+  "customerFirstName": "Liam",
+  "customerLastName": "Doyle",
+  "customerEmail": "liam.doyle@gmail.com",
+  "customerAddress1": "5 Park Rd",
+  "customerAddress2": "Main St",
+  "customerCounty": "Kerry",
+  "customerPhone": 871127847
+}]
