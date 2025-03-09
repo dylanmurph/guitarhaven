@@ -33,7 +33,7 @@ export default class DisplayPurchases extends Component {
     }
 
     filterSortPurchases = () => {
-        const {purchases, searchValue, filterType,sortChoice}=this.state
+        const { purchases, searchValue, filterType, sortChoice } = this.state;
 
         let filteredPurchases = purchases.filter(purchase => {
             const combinedData = Object.values({
@@ -45,13 +45,14 @@ export default class DisplayPurchases extends Component {
                 customerAddress: `${purchase.customerAddress1 || ""} ${purchase.customerAddress2 || ""} ${purchase.customerCounty || ""}`,
                 totalPayment: purchase.totalPayment ? purchase.totalPayment.toString() : "",
                 cart: purchase.cart?.map(item => item.guitarId || "").join(", ") || "",
-            }).join(" ").toLowerCase()
+                paypalPaymentID: purchase.paypalPaymentID || ""
+            }).join(" ").toLowerCase();
 
-            return combinedData.includes(searchValue.toLowerCase())
-        })
+            return combinedData.includes(searchValue.toLowerCase());
+        });
 
         if (filterType !== "all") {
-            filteredPurchases = filteredPurchases.filter(purchase => String(purchase.returned) === filterType)
+            filteredPurchases = filteredPurchases.filter(purchase => String(purchase.returned) === filterType);
         }
 
         const sortingOptions = {
@@ -59,14 +60,15 @@ export default class DisplayPurchases extends Component {
             NameDesc: (a, b) => (b.customerFirstName || "").localeCompare(a.customerFirstName || ""),
             DateAsc: (a, b) => new Date(a.purchaseDate || 0) - new Date(b.purchaseDate || 0),
             DateDesc: (a, b) => new Date(b.purchaseDate || 0) - new Date(a.purchaseDate || 0),
-        }
+        };
 
         if (sortChoice in sortingOptions) {
-            filteredPurchases.sort(sortingOptions[sortChoice])
+            filteredPurchases.sort(sortingOptions[sortChoice]);
         }
 
-        return filteredPurchases
-    }
+        return filteredPurchases;
+    };
+
 
     render() {
         const filteredSortedPurchases = this.filterSortPurchases()

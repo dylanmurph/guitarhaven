@@ -52,6 +52,7 @@ export default class PurchaseTableRow extends Component {
             <tr>
                 <td>{productDetails ? productDetails.name : "Loading..."}</td>
                 <td>{productDetails ? productDetails.model : "Loading..."}</td>
+                <td>{purchase.paypalPaymentID}</td>
                 <td>€{productDetails ? productDetails.price : "..."}</td>
                 <td>{new Date(purchase.purchaseDate).toLocaleDateString()}</td>
                 <td>{purchase.customerFirstName} {purchase.customerLastName}</td>
