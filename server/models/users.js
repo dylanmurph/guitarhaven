@@ -1,4 +1,4 @@
-const mongoose = require(`mongoose`)
+const mongoose = require('mongoose')
 
 let usersSchema = new mongoose.Schema(
     {
@@ -10,11 +10,21 @@ let usersSchema = new mongoose.Schema(
         address2: { type: String, required: true },
         county: { type: String, required: true },
         phone: { type: Number, required: true },
-        accessLevel: { type: Number, default:parseInt(process.env.ACCESS_LEVEL_NORMAL_USER)},
-        image: { type: String}
+        accessLevel: { type: Number, default: parseInt(process.env.ACCESS_LEVEL_NORMAL_USER) },
+        image: { type: String },
+        cart: {
+            type: [
+                {
+                    guitarId: String,
+                    quantity: { type: Number, default: 1 }
+                }
+            ],
+            default: []
+        }
     },
     {
         collection: `users`
-    })
+    }
+)
 
 module.exports = mongoose.model(`users`, usersSchema)

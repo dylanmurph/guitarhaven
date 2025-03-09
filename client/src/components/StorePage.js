@@ -3,7 +3,8 @@ import axios from "axios"
 import { SERVER_HOST } from "../config/global_constants"
 import "../css/storepage.css"
 
-export default class StorePage extends Component {
+export default class StorePage extends Component
+{
     constructor(props) {
         super(props)
         const category = this.props.match.params.category || "all"
@@ -16,6 +17,21 @@ export default class StorePage extends Component {
     }
 
     componentDidMount() {
+        const token = localStorage.getItem("token")
+        const cfg = {
+            headers: { Authorization: `JWT ${token}` }
+        }
+
+        if (token) {
+            axios.get(`${SERVER_HOST}/cart`, cfg)
+                .then(res => {
+                    if (res.data) {
+                        this.setState({ cart: res.data })
+                    }
+                })
+                .catch(error => console.error("Error fetching cart:", error))
+        }
+
         axios.get(`${SERVER_HOST}/guitars`)
             .then(res => {
                 if (res.data) {
@@ -70,8 +86,36 @@ export default class StorePage extends Component {
         return filteredGuitars
     }
 
+    handleAddToCart = (guitarId) => {
+        const token = localStorage.getItem("token")
+        const cfg = {
+            headers: { Authorization: `JWT ${token}` }
+        }
+
+        if (!token || token === "null") {
+            alert("You must be logged in to add items to the cart.")
+            return
+        }
+
+        axios.post(`${SERVER_HOST}/cart/add`, { guitarId }, cfg)
+            .then((res) => {
+                alert("Added to cart")
+
+                return axios.get(`${SERVER_HOST}/cart`, {
+                    headers: { Authorization: `JWT ${token}` }
+                })
+            })
+            .then(res => {
+                this.setState({ cart: res.data })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     render() {
         const filteredGuitars = this.getFilteredSortedGuitars()
+
 
         return (
             <div className="store-container">
@@ -112,6 +156,9 @@ export default class StorePage extends Component {
                                 <p className="guitar-year">{guitar.year}</p>
                                 <p className="guitar-price">€{guitar.price}</p>
                                 <p className="guitar-type">{guitar.type}</p>
+                                <button onClick={() => this.handleAddToCart(guitar._id)} className="add-to-cart">
+                                    Add to cart
+                                </button>
                             </div>
                         </div>
                     ))}
