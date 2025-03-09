@@ -18,10 +18,13 @@ import DeleteUser from "./components/users/DeleteUser"
 import StorePage from "./components/StorePage"
 import ForgotPassword from "./components/pages/ForgotPassword"
 import DisplayPurchases from "./components/purchases/DisplayPurchases";
-
-import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
 import Register from "./components/pages/Register";
 import PrevPurchasesDisplay from "./components/prevPurchases/PrevPurchasesDisplay";
+import AccountDetails from "./components/pages/AccountDetails";
+
+import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
+
+
 
 
 
@@ -34,6 +37,7 @@ if (typeof localStorage.accessLevel === "undefined")
 
 
 export default class App extends Component {
+
     render() {
         return (
             <BrowserRouter>
@@ -63,6 +67,7 @@ export default class App extends Component {
 
                             <Route exact path="/forgot-password" component={ForgotPassword}/>
                             <Route path="/register" component={Register}/>
+                            <Route path="/accountDetails/:id" component={AccountDetails}/>
 
                             <Route path="*" component={() => <h3>Invalid URL. Webpage does not exist</h3>}/>
                         </Switch>
