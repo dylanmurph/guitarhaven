@@ -6,6 +6,7 @@
     position: relative;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
+
 .account-menu{
     width: 100%;
 }
@@ -61,4 +62,13 @@
     text-decoration: underline;
     font-style: italic;
     font-size: 14px;
+}
+
+.cart-container{
+    width: 200%;
+    color: white;
+}
+
+.cart-container table{
+    all: unset;
 }
