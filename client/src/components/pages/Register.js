@@ -115,7 +115,7 @@ export default class Register extends Component {
 
         return (
             <div className="form-container">
-                {this.state.isRegistered ? <Redirect to="/home"/> : null}
+                {this.state.isRegistered ? <Redirect to="/"/> : null}
 
                 <form className="form" onSubmit={this.handleSubmit}>
                     <h2>Register</h2>

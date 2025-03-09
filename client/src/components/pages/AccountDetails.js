@@ -144,7 +144,7 @@ export default class AccountDetails extends Component {
 
         return (
             <div className="form-container">
-                {this.state.isUpdated ? <Redirect to="/home"/> : null}
+                {this.state.isUpdated ? <Redirect to=""/> : null}
 
                 <form className="form" onSubmit={this.handleSubmit}>
                     <h2>Modify Account</h2>

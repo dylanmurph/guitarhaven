@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import axios from "axios"
-import { SERVER_HOST } from "../config/global_constants"
-import "../css/storepage.css"
+import { SERVER_HOST } from "../../config/global_constants"
+import "../../css/storepage.css"
+import {Link} from "react-router-dom";
 
 export default class StorePage extends Component
 {

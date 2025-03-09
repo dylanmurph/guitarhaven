@@ -7,7 +7,6 @@ import Footer from "./components/Footer"
 import Home from "./components/pages/Home"
 import AccountDropdown from "./components/AccountDropdown"
 import ContactPage from "./components/pages/ContactPage"
-import CartPage from "./components/pages/CartPage"
 import AdminPage from "./components/pages/AdminPage"
 import EditGuitar from "./components/guitars/EditGuitar"
 import DeleteGuitar from "./components/guitars/DeleteGuitar"
@@ -15,7 +14,7 @@ import DisplayAllGuitars from "./components/guitars/DisplayAllGuitars"
 import AddGuitar from "./components/guitars/AddGuitar"
 import DisplayAllUsers from "./components/users/DisplayAllUsers"
 import DeleteUser from "./components/users/DeleteUser"
-import StorePage from "./components/StorePage"
+import StorePage from "./components/pages/StorePage"
 import ForgotPassword from "./components/pages/ForgotPassword"
 import DisplayPurchases from "./components/purchases/DisplayPurchases";
 import Register from "./components/pages/Register";
@@ -24,10 +23,6 @@ import AccountDetails from "./components/pages/AccountDetails";
 
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
 
-
-
-
-
 if (typeof localStorage.accessLevel === "undefined")
 {
     localStorage.name = "GUEST"
@@ -35,9 +30,7 @@ if (typeof localStorage.accessLevel === "undefined")
     localStorage.token = null
 }
 
-
 export default class App extends Component {
-
     render() {
         return (
             <BrowserRouter>
@@ -48,23 +41,17 @@ export default class App extends Component {
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/account" component={AccountDropdown}/>
                             <Route exact path="/contact" component={ContactPage}/>
-                            <Route exact path="/cart" component={CartPage}/>
                             <Route exact path="/admin" component={AdminPage}/>
-
                             <Route exact path="/displayAllGuitars" component={DisplayAllGuitars}/>
                             <Route exact path="/editGuitar/:id" component={EditGuitar}/>
                             <Route exact path="/deleteGuitar/:id" component={DeleteGuitar}/>
                             <Route exact path="/AddGuitar" component={AddGuitar}/>
-
                             <Route exact path="/displayAllUsers" component={DisplayAllUsers}/>
                             <Route exact path="/deleteUser/:id" component={DeleteUser}/>
-
                             <Route exact path="/displayPurchases" component={DisplayPurchases}/>
                             <Route exact path="/prevPurchasesDisplay" component={PrevPurchasesDisplay}/>
-
                             <Route exact path="/store" component={StorePage} />
                             <Route path="/store/:category" component={StorePage}/>
-
                             <Route exact path="/forgot-password" component={ForgotPassword}/>
                             <Route path="/register" component={Register}/>
                             <Route path="/accountDetails" component={AccountDetails}/>
