@@ -49,8 +49,8 @@
   ],
   "paypalPaymentID": "0S179132T4719754U",
   "totalPayment": 7311,
-  "returned": false,
-  "returnDate": "N/A",
+  "returned": true,
+  "returnDate": "3/9/2025",
   "__v": 0
 },
 {
@@ -76,6 +76,115 @@
   ],
   "paypalPaymentID": "05774483T2378045M",
   "totalPayment": 757,
+  "returned": false,
+  "returnDate": "N/A",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ce1c174b178b41c06dc3db"
+  },
+  "purchaseDate": "2025-03-09T22:54:15.588Z",
+  "customerFirstName": "Dylan",
+  "customerLastName": "Murphy",
+  "customerEmail": "d00223094@student.dkit.ie",
+  "customerAddress1": "18 Shamrock Grove",
+  "customerAddress2": "Dunleer",
+  "customerCounty": "Louth",
+  "customerPhone": 871231234,
+  "cart": [
+    {
+      "quantity": 1,
+      "_id": {
+        "$oid": "67ce1ac5ab944545e82b67fa"
+      },
+      "guitarId": "67c6f3d1f8c14966750eaf1b"
+    },
+    {
+      "quantity": 1,
+      "_id": {
+        "$oid": "67ce1afeab944545e82b6824"
+      },
+      "guitarId": "67c6f3d1f8c14966750eaf1d"
+    },
+    {
+      "quantity": 1,
+      "_id": {
+        "$oid": "67ce1b00ab944545e82b6828"
+      },
+      "guitarId": "67c6f3d1f8c14966750eaf1c"
+    }
+  ],
+  "paypalPaymentID": "7AX72237HW903323E",
+  "totalPayment": 5360,
+  "returned": false,
+  "returnDate": "N/A",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ce1d00830d971b70307e7b"
+  },
+  "purchaseDate": "2025-03-09T22:58:08.008Z",
+  "customerFirstName": "Dylan",
+  "customerLastName": "Murphy",
+  "customerEmail": "d00223094@student.dkit.ie",
+  "customerAddress1": "18 Shamrock Grove",
+  "customerAddress2": "Dunleer",
+  "customerCounty": "Louth",
+  "customerPhone": 871231234,
+  "cart": [
+    {
+      "quantity": 1,
+      "_id": {
+        "$oid": "67ce1ac5ab944545e82b67fa"
+      },
+      "guitarId": "67c6f3d1f8c14966750eaf1b"
+    },
+    {
+      "quantity": 1,
+      "_id": {
+        "$oid": "67ce1afeab944545e82b6824"
+      },
+      "guitarId": "67c6f3d1f8c14966750eaf1d"
+    },
+    {
+      "quantity": 1,
+      "_id": {
+        "$oid": "67ce1b00ab944545e82b6828"
+      },
+      "guitarId": "67c6f3d1f8c14966750eaf1c"
+    }
+  ],
+  "paypalPaymentID": "1UK76580EL2616025",
+  "totalPayment": 5360,
+  "returned": false,
+  "returnDate": "N/A",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ce21bb62d6161a00ef37bc"
+  },
+  "purchaseDate": "2025-03-09T23:18:19.712Z",
+  "customerFirstName": "Dylan",
+  "customerLastName": "Murphy",
+  "customerEmail": "d00223094@student.dkit.ie",
+  "customerAddress1": "18 Shamrock Grove",
+  "customerAddress2": "Dunleer",
+  "customerCounty": "Louth",
+  "customerPhone": 871231234,
+  "cart": [
+    {
+      "quantity": 1,
+      "_id": {
+        "$oid": "67ce1f2362d6161a00ef37b0"
+      },
+      "guitarId": "67c6f3d1f8c14966750eaf1a"
+    }
+  ],
+  "paypalPaymentID": "0BG53994RX1676340",
+  "totalPayment": 2559,
   "returned": false,
   "returnDate": "N/A",
   "__v": 0

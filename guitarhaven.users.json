@@ -12,16 +12,8 @@
   "phone": 871231234,
   "image": "/uploads/users/dylan.png",
   "accessLevel": 2,
-  "cart": [
-    {
-      "quantity": 2,
-      "_id": {
-        "$oid": "67cdb2f81993474d80300088"
-      },
-      "guitarId": "67c6f3d1f8c14966750eaf1a"
-    }
-  ],
-  "__v": 19
+  "cart": [],
+  "__v": 42
 },
 {
   "_id": {
@@ -183,6 +175,31 @@
   "phone": 864099962,
   "image": "/uploads/users/matt_tomk.jpg",
   "accessLevel": 2,
+  "cart": [
+    {
+      "quantity": 1,
+      "_id": {
+        "$oid": "67ce0e1abfe1d42224c7faa0"
+      },
+      "guitarId": "67c6f3d1f8c14966750eaf14"
+    }
+  ],
+  "__v": 3
+},
+{
+  "_id": {
+    "$oid": "67ce26cdca80d914b41d1b97"
+  },
+  "accessLevel": 1,
+  "firstName": "Matthew",
+  "lastName": "Levins",
+  "email": "matthew.levins@outlook.com",
+  "password": "$2b$04$/hmcmuQi40R7VvDDh.8YWu4de5gWNFuKrL91sEcvG/I5AZDWJ7L76",
+  "address1": "matthew lane",
+  "address2": "levins road",
+  "county": "Dublin",
+  "phone": 861235432,
+  "image": "/uploads/users/dylan.png",
   "cart": [],
   "__v": 0
 }]

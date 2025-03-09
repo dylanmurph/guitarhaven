@@ -314,23 +314,11 @@
   "_id": {
     "$oid": "67c6f3d1f8c14966750eaf2c"
   },
-  "name": "Schecter Stiletto",
+  "name": "Schecter",
   "model": "Stiletto Studio 4",
   "year": 2021,
   "price": 799,
   "type": "Bass",
   "stock": 4,
   "image": "/uploads/guitars/schecterStilettoStudio4.jpg"
-},
-{
-  "_id": {
-    "$oid": "67c6f3d1f8c14966750eaf2d"
-  },
-  "name": "Epiphone Thunderbird",
-  "model": "Thunderbird IV Bass",
-  "year": 2022,
-  "price": 549,
-  "type": "Bass",
-  "stock": 3,
-  "image": "/uploads/guitars/epiphoneThunderbirdIV.jpg"
 }]
