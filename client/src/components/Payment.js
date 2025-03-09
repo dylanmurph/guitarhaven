@@ -4,6 +4,7 @@ import {Redirect} from "react-router-dom"
 import {SANDBOX_CLIENT_ID, SERVER_HOST} from "../config/global_constants"
 import PayPalMessage from "./PayPalMessage"
 import {PayPalButtons, PayPalScriptProvider} from "@paypal/react-paypal-js"
+import "../css/paypal.css"
 
 export default class Payment extends Component {
     constructor(props) {
@@ -90,13 +91,14 @@ export default class Payment extends Component {
 
     render() {
         return (
-            <div>
+            <div className="paypal-container">
                 {this.state.redirectToPayPalMessage ? (
                     <Redirect to={`/PayPalMessage/${this.state.payPalMessageType}/${this.state.payPalOrderID}`}/>
                 ) : null}
 
                 <PayPalScriptProvider options={{currency: "EUR", "client-id": SANDBOX_CLIENT_ID}}>
                     <PayPalButtons
+                        className="paypal-button"
                         style={{layout: "horizontal"}}
                         createOrder={this.createOrder}
                         onApprove={this.onApprove}
