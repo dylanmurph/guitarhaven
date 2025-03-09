@@ -9,6 +9,7 @@ export default class PurchaseTable extends Component {
                 <tr>
                     <th>Product Name</th>
                     <th>Product Model</th>
+                    <th>Paypal ID</th>
                     <th>Price</th>
                     <th>Purchase Date</th>
                     <th>Name</th>
