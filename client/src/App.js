@@ -7,7 +7,7 @@ import Footer from "./components/Footer"
 import Home from "./components/pages/Home"
 import AccountDropdown from "./components/AccountDropdown"
 import ContactPage from "./components/pages/ContactPage"
-import CartPage from "./components/pages/CartPage"
+import Cart from "./components/pages/CartPage"
 import AdminPage from "./components/pages/AdminPage"
 import EditGuitar from "./components/guitars/EditGuitar"
 import DeleteGuitar from "./components/guitars/DeleteGuitar"
@@ -15,7 +15,7 @@ import DisplayAllGuitars from "./components/guitars/DisplayAllGuitars"
 import AddGuitar from "./components/guitars/AddGuitar"
 import DisplayAllUsers from "./components/users/DisplayAllUsers"
 import DeleteUser from "./components/users/DeleteUser"
-import StorePage from "./components/StorePage"
+import StorePage from "./components/pages/StorePage"
 import ForgotPassword from "./components/pages/ForgotPassword"
 import DisplayPurchases from "./components/purchases/DisplayPurchases";
 import Register from "./components/pages/Register";
@@ -23,6 +23,7 @@ import PrevPurchasesDisplay from "./components/prevPurchases/PrevPurchasesDispla
 import AccountDetails from "./components/pages/AccountDetails";
 
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
+import CartDropdown from "./components/CartDropdown";
 
 
 
@@ -48,7 +49,6 @@ export default class App extends Component {
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/account" component={AccountDropdown}/>
                             <Route exact path="/contact" component={ContactPage}/>
-                            <Route exact path="/cart" component={CartPage}/>
                             <Route exact path="/admin" component={AdminPage}/>
 
                             <Route exact path="/displayAllGuitars" component={DisplayAllGuitars}/>
@@ -68,6 +68,7 @@ export default class App extends Component {
                             <Route exact path="/forgot-password" component={ForgotPassword}/>
                             <Route path="/register" component={Register}/>
                             <Route path="/accountDetails" component={AccountDetails}/>
+                            <Route path="/cart" component={CartDropdown}/>
 
                             <Route path="*" component={() => <h3>Invalid URL. Webpage does not exist</h3>}/>
                         </Switch>
