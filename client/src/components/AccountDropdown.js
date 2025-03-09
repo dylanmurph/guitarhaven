@@ -64,6 +64,7 @@ export default class AccountDropdown extends Component {
 
     user() {
         const name = localStorage.getItem("name")
+        const userId = localStorage.getItem("userId")
         return (
             <div className="account-menu">
                 <div className="text-container">
@@ -74,7 +75,7 @@ export default class AccountDropdown extends Component {
                    Your Purchases
                 </Link>
 
-                <Link className="submit-button" to="/modify-account">
+                <Link className="submit-button" to={`/accountDetails/${userId}`}>
                     Account Details
                 </Link>
 

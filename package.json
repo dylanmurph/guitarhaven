@@ -7,7 +7,10 @@
     "start:all": "concurrently \"cd server && npm start\" \"cd client && npm start\""
   },
   "dependencies": {
-    "jsonwebtoken": "^9.0.2"
+    "@paypal/paypal-js": "^8.2.0",
+    "@paypal/react-paypal-js": "^8.8.2",
+    "jsonwebtoken": "^9.0.2",
+    "sass": "^1.85.1"
   },
   "devDependencies": {
     "concurrently": "^6.0.0"
