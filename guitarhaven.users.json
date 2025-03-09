@@ -11,23 +11,17 @@
   "county": "Louth",
   "phone": 871231234,
   "image": "/uploads/users/dylan.png",
-  "accessLevel": 2
-},
-{
-    "_id": {
-      "$oid": "67cc72dc43644e7840886a25"
-    },
-    "accessLevel": 2,
-    "firstName": "Matthew",
-    "lastName": "Tomkins",
-    "email": "d00272125@student.dkit.ie",
-    "password": "$2b$04$zkUU.LBnlveyqx7pIEwE2.99B6NVlbGlA0UxNBu5Qlz0rqFvGg6Ba",
-    "address1": "123 Coolamber Park",
-    "address2": "Knocklyon",
-    "county": "Dublin",
-    "phone": 864099962,
-    "image": "/uploads/users/matt_tomk.jpg",
-    "__v": 0
+  "accessLevel": 2,
+  "cart": [
+    {
+      "quantity": 2,
+      "_id": {
+        "$oid": "67cdb2f81993474d80300088"
+      },
+      "guitarId": "67c6f3d1f8c14966750eaf1a"
+    }
+  ],
+  "__v": 19
 },
 {
   "_id": {
@@ -42,7 +36,8 @@
   "county": "Cork",
   "phone": 871814217,
   "image": "/uploads/users/seansmith.png",
-  "accessLevel": 1
+  "accessLevel": 1,
+  "cart": []
 },
 {
   "_id": {
@@ -57,7 +52,8 @@
   "county": "Clare",
   "phone": 871301437,
   "image": "/uploads/users/seansullivan.png",
-  "accessLevel": 1
+  "accessLevel": 1,
+  "cart": []
 },
 {
   "_id": {
@@ -72,7 +68,8 @@
   "county": "Kerry",
   "phone": 871127847,
   "image": "/uploads/users/liamdoyle.png",
-  "accessLevel": 1
+  "accessLevel": 1,
+  "cart": []
 },
 {
   "_id": {
@@ -87,7 +84,8 @@
   "county": "Limerick",
   "phone": 871232391,
   "image": "/uploads/users/ryanmccarthy.png",
-  "accessLevel": 1
+  "accessLevel": 1,
+  "cart": []
 },
 {
   "_id": {
@@ -102,7 +100,8 @@
   "county": "Dublin",
   "phone": 871128756,
   "image": "/uploads/users/oisinmurphy.png",
-  "accessLevel": 1
+  "accessLevel": 1,
+  "cart": []
 },
 {
   "_id": {
@@ -117,7 +116,8 @@
   "county": "Cork",
   "phone": 871650433,
   "image": "/uploads/users/cianmccarthy.png",
-  "accessLevel": 1
+  "accessLevel": 1,
+  "cart": []
 },
 {
   "_id": {
@@ -132,7 +132,8 @@
   "county": "Galway",
   "phone": 871629262,
   "image": "/uploads/users/ryanoconnor.png",
-  "accessLevel": 1
+  "accessLevel": 1,
+  "cart": []
 },
 {
   "_id": {
@@ -148,7 +149,8 @@
   "county": "Kildare",
   "phone": 862143345,
   "image": "/uploads/users/dylanshiels.png",
-  "__v": 0
+  "__v": 0,
+  "cart": []
 },
 {
   "_id": {
@@ -164,5 +166,23 @@
   "county": "Meath",
   "phone": 871244536,
   "image": "/uploads/users/patricklandy.png",
+  "__v": 0,
+  "cart": []
+},
+{
+  "_id": {
+    "$oid": "67cc72dc43644e7840886a25"
+  },
+  "firstName": "Matthew",
+  "lastName": "Tomkins",
+  "email": "d00272125@student.dkit.ie",
+  "password": "$2b$04$zkUU.LBnlveyqx7pIEwE2.99B6NVlbGlA0UxNBu5Qlz0rqFvGg6Ba",
+  "address1": "123 Coolamber Park",
+  "address2": "Knocklyon",
+  "county": "Dublin",
+  "phone": 864099962,
+  "image": "/uploads/users/matt_tomk.jpg",
+  "accessLevel": 2,
+  "cart": [],
   "__v": 0
 }]
