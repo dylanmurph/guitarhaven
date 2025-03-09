@@ -1,4 +1,4 @@
-# Node.js dependencies
+# Node.verifyUserJWTId.js dependencies
 node_modules/
 
 # npm package lock file (you can choose to keep it if you want)
@@ -23,7 +23,7 @@ yarn-error.log*
 # dotenv environment variable files (ignoring .env.local and other environments)
 .env.*.local
 
-# Next.js build output
+# Next.verifyUserJWTId.js build output
 .next/
 
 # Build directories (e.g., for Babel, TypeScript, etc.)
