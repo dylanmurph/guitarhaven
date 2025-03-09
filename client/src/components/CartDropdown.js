@@ -9,6 +9,7 @@ export default class CartDropdown extends Component {
         super(props)
         this.state = {
             cart: [],
+            totalPrice: 0
         }
     }
 
@@ -23,7 +24,7 @@ export default class CartDropdown extends Component {
         }
 
         if (!token) {
-            this.setState({ cart: [] })
+            this.setState({ cart: [], totalPrice: 0 })
             return
         }
 
@@ -32,31 +33,33 @@ export default class CartDropdown extends Component {
                 const cartItems = response.data
 
                 if (cartItems.length === 0) {
-                    this.setState({ cart: [] })
+                    this.setState({ cart: [], totalPrice: 0 })
                     return
                 }
 
+                let totalPrice = 0
                 const fetchGuitarDetails = cartItems.map(item => {
                     return axios.get(`${SERVER_HOST}/guitars/${item.guitarId}`)
                         .then(guitarRes => {
+                            totalPrice += guitarRes.data.price * item.quantity;
                             return {
                                 ...item,
                                 guitarName: guitarRes.data.name,
                                 guitarImage: `${SERVER_HOST}${guitarRes.data.image}`,
                             }
                         })
-                        .catch(err => {
-                            return { ...item, guitarName: "Unknown Guitar", guitarImage: "" }
+                        .catch(error => {
+                            console.error(error)
                         })
                 })
 
                 Promise.all(fetchGuitarDetails).then(updatedCart => {
-                    this.setState({ cart: updatedCart })
+                    this.setState({ cart: updatedCart, totalPrice: totalPrice })
                 })
 
             })
             .catch(error => {
-                console.error("❌ Error fetching cart:", error)
+                console.error(error)
             })
     }
 
@@ -72,7 +75,7 @@ export default class CartDropdown extends Component {
                 this.setState({ cart: updatedCart })
             })
             .catch(error => {
-                console.error("❌ Error removing item from cart:", error)
+                console.error(error)
             })
     }
 
@@ -81,23 +84,15 @@ export default class CartDropdown extends Component {
     }
 
     userCart = () => {
-        const { cart } = this.state
+        const { cart, totalPrice } = this.state
         return (
-            <div className="cart-items">
+            <div className="cart-table">
                 <table>
-                    <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th></th>
-                    </tr>
-                    </thead>
                     <tbody>
                     {cart.map(item => (
                         <tr key={item.guitarId}>
                             <td>
-                                <img src={item.guitarImage} alt={item.guitarName} width="50" />
+                                <img src={item.guitarImage} alt={item.guitarName} width="50"/>
                             </td>
                             <td>{item.guitarName}</td>
                             <td>{item.quantity}</td>
@@ -108,13 +103,17 @@ export default class CartDropdown extends Component {
                     ))}
                     </tbody>
                 </table>
-                <Link className="submit-button" to="/checkout">Checkout</Link>
+                <p>Total Price: €{totalPrice}</p>
+                <Link to={{ pathname: "/payment",state: { price: totalPrice },}}>
+                    Proceed to checkout
+                </Link>
             </div>
         )
     }
 
+
     render() {
-        const { cart } = this.state
+        const { cart} = this.state
 
         if (cart.length === 0) {
             return (

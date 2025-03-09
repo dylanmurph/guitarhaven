@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Home from "./components/pages/Home"
 import AccountDropdown from "./components/AccountDropdown"
-import Checkout from "./components/pages/Checkout"
 import AdminPage from "./components/pages/AdminPage"
 import EditGuitar from "./components/guitars/EditGuitar"
 import DeleteGuitar from "./components/guitars/DeleteGuitar"
@@ -20,9 +19,9 @@ import DisplayPurchases from "./components/purchases/DisplayPurchases";
 import Register from "./components/pages/Register";
 import PrevPurchasesDisplay from "./components/prevPurchases/PrevPurchasesDisplay";
 import AccountDetails from "./components/pages/AccountDetails";
-
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
-import PurchaseComplete from "./components/pages/PurchaseComplete";
+import Payment from "./components/Payment";
+import PayPalMessage from "./components/PayPalMessage";
 
 if (typeof localStorage.accessLevel === "undefined")
 {
@@ -55,8 +54,9 @@ export default class App extends Component {
                             <Route exact path="/forgot-password" component={ForgotPassword}/>
                             <Route path="/register" component={Register}/>
                             <Route path="/accountDetails" component={AccountDetails}/>
-                            <Route path="checkout" component={Checkout}/>
-                            <Route path="/purchaseComplete" component={PurchaseComplete}/>
+                            <Route path="/payment" component={Payment}/>
+                            <Route exact path="/PayPalMessage/:messageType/:payPalPaymentID" component={PayPalMessage}/>
+
 
                             <Route path="*" component={() => <h3>Invalid URL. Webpage does not exist</h3>}/>
                         </Switch>

@@ -22,6 +22,7 @@ router.post('/users/login/:email/:password', (req, res) => {
                         name: data.firstName + " " + data.lastName,
                         accessLevel: data.accessLevel, token: token
                     })
+
                 } else {
                     console.log("Invalid login credentials")
                     res.json({errorMessage: "Invalid login credentials"})
@@ -136,6 +137,7 @@ router.delete(`/users/:id`, (req, res) => {
 })
 
 router.post(`/users/logout`, (req, res) => {
+    req.session.destroy()
     res.json({})
 })
 

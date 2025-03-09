@@ -10,6 +10,13 @@ require(`./config/db`)
 const express = require(`express`)
 const app = express()
 
+app.use(require(`express-session`)({
+    secret: process.env.JWT_PRIVATE_KEY_FILENAME,
+    resave: false,
+    cookie: {secure: false, maxAge: 60000},
+    saveUninitialized: true
+}))
+
 app.use(express.json())
 app.use(require(`body-parser`).json())
 app.use(require(`cors`)({credentials: true, origin: process.env.LOCAL_HOST}))
