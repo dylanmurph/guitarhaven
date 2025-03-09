@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Home from "./components/pages/Home"
 import AccountDropdown from "./components/AccountDropdown"
-import ContactPage from "./components/pages/ContactPage"
+import Checkout from "./components/pages/Checkout"
 import AdminPage from "./components/pages/AdminPage"
 import EditGuitar from "./components/guitars/EditGuitar"
 import DeleteGuitar from "./components/guitars/DeleteGuitar"
@@ -22,6 +22,7 @@ import PrevPurchasesDisplay from "./components/prevPurchases/PrevPurchasesDispla
 import AccountDetails from "./components/pages/AccountDetails";
 
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
+import PurchaseComplete from "./components/pages/PurchaseComplete";
 
 if (typeof localStorage.accessLevel === "undefined")
 {
@@ -40,7 +41,6 @@ export default class App extends Component {
                         <Switch>
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/account" component={AccountDropdown}/>
-                            <Route exact path="/contact" component={ContactPage}/>
                             <Route exact path="/admin" component={AdminPage}/>
                             <Route exact path="/displayAllGuitars" component={DisplayAllGuitars}/>
                             <Route exact path="/editGuitar/:id" component={EditGuitar}/>
@@ -55,6 +55,8 @@ export default class App extends Component {
                             <Route exact path="/forgot-password" component={ForgotPassword}/>
                             <Route path="/register" component={Register}/>
                             <Route path="/accountDetails" component={AccountDetails}/>
+                            <Route path="checkout" component={Checkout}/>
+                            <Route path="/purchaseComplete" component={PurchaseComplete}/>
 
                             <Route path="*" component={() => <h3>Invalid URL. Webpage does not exist</h3>}/>
                         </Switch>

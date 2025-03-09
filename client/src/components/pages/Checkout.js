@@ -1,10 +1,11 @@
 import React, {Component} from "react"
+import "../../css/checkout.css"
 
-export default class ContactPage extends Component {
+export default class CartPage extends Component {
     render() {
         return (
             <div>
-                <h1>contact</h1>
+                <h1>CART</h1>
 
             </div>
         )
