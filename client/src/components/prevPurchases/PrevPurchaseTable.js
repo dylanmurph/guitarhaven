@@ -1,10 +1,8 @@
-import React, {Component} from "react"
-import PrevPurchaseTableRow from "./PrevPurchaseTableRow"
+import React, { Component } from "react";
+import PrevPurchaseTableRow from "./PrevPurchaseTableRow";
 
-export default class PurchaseTable extends Component
-{
-    render()
-    {
+export default class PurchaseTable extends Component {
+    render() {
         return (
             <table className="table">
                 <thead>
@@ -24,7 +22,12 @@ export default class PurchaseTable extends Component
                 </thead>
 
                 <tbody>
-                {this.props.purchases.map((purchases) =><PrevPurchaseTableRow key={purchases._id} purchase={purchases} />)}
+                {this.props.purchases.map((purchase) => (
+                    purchase.cart.map((item, index) => (
+                        <PrevPurchaseTableRow
+                            key={`${purchase._id}-${index}`}
+                            purchase={purchase}
+                            item={item}/>))))}
                 </tbody>
             </table>
         )
