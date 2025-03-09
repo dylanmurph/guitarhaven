@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
-import {Redirect} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import "../../css/form.css"
-import {SERVER_HOST} from '../../config/global_constants'
+import { SERVER_HOST } from '../../config/global_constants'
 
 export default class AccountDetails extends Component {
     constructor(props) {
@@ -24,22 +24,20 @@ export default class AccountDetails extends Component {
             passwordError: "",
             confirmPasswordError: "",
             phoneError: "",
-            isUpdated: false
+            isUpdated: false,
+            redirectToHome: false
         }
     }
 
     componentDidMount() {
-
-
-
-        axios.get(`${SERVER_HOST}/users/${this.props.match.params.id}`, {headers: {"authorization": localStorage.token}})
+        axios.get(`${SERVER_HOST}/users/${this.props.match.params.id}`, { headers: { "authorization": localStorage.token } })
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
                         console.log(res.data.errorMessage)
                     } else {
                         this.setState({
-                            firstName:res.data.firstName,
+                            firstName: res.data.firstName,
                             lastName: res.data.lastName,
                             email: res.data.email,
                             address1: res.data.address1,
@@ -56,7 +54,7 @@ export default class AccountDetails extends Component {
     }
 
     handleChange = (e) => {
-        this.setState({[e.target.name]: e.target.value, [`${e.target.name}Error`]: ""})
+        this.setState({ [e.target.name]: e.target.value, [`${e.target.name}Error`]: "" })
     }
 
     handleSubmit = (e) => {
@@ -69,32 +67,32 @@ export default class AccountDetails extends Component {
         let error = false
 
         if (!nameRegex.test(this.state.firstName)) {
-            this.setState({firstNameError: "Please enter only your first name"})
+            this.setState({ firstNameError: "Please enter only your first name" })
             error = true
         }
 
         if (!nameRegex.test(this.state.lastName)) {
-            this.setState({lastNameError: "Please enter only your last name"})
+            this.setState({ lastNameError: "Please enter only your last name" })
             error = true
         }
 
         if (!emailRegex.test(this.state.email)) {
-            this.setState({emailError: "Please enter a valid email"})
+            this.setState({ emailError: "Please enter a valid email" })
             error = true
         }
 
         if (this.state.password.length < 8) {
-            this.setState({passwordError: "Password must be at least 8 characters long"})
+            this.setState({ passwordError: "Password must be at least 8 characters long" })
             error = true
         }
 
         if (this.state.password !== this.state.confirmPassword) {
-            this.setState({confirmPasswordError: "Passwords do not match"})
+            this.setState({ confirmPasswordError: "Passwords do not match" })
             error = true
         }
 
         if (!phoneRegex.test(this.state.phone)) {
-            this.setState({phoneError: "Please enter a valid phone number - format: 871231234"})
+            this.setState({ phoneError: "Please enter a valid phone number - format: 871231234" })
             error = true
         }
 
@@ -115,13 +113,13 @@ export default class AccountDetails extends Component {
             updatedUser.password = this.state.password
         }
 
-        axios.put(`${SERVER_HOST}/users/${this.props.match.params.id}`, updatedUser,)
+        axios.put(`${SERVER_HOST}/users/${this.props.match.params.id}`, updatedUser, { headers: { "authorization": localStorage.token } })
             .then(res => {
                 if (res.data && res.data.errorMessage) {
                     console.log(res.data.errorMessage)
                 } else {
                     console.log("User Updated successfully")
-                    this.setState({ isUpdated: true });
+                    this.setState({ isUpdated: true, redirectToHome: true })
                 }
             })
             .catch(error => {
@@ -140,44 +138,43 @@ export default class AccountDetails extends Component {
 
         return (
             <div className="form-container">
-                {this.state.isUpdated ? <Redirect to="/home"/> : null}
+                {this.state.redirectToHome ? <Redirect to="/home" /> : null}
 
                 <form className="form" onSubmit={this.handleSubmit}>
                     <h2>Modify Account</h2>
 
                     <div>
                         <input className="input-field" type="text" name="firstName" placeholder="First Name"
-                               value={this.state.firstName} onChange={this.handleChange} required/>
+                               value={this.state.firstName} onChange={this.handleChange} required />
                         <p className="error-message">{this.state.firstNameError}</p>
                     </div>
                     <div>
                         <input className="input-field" type="text" name="lastName" placeholder="Last Name"
-                               value={this.state.lastName} onChange={this.handleChange} required/>
+                               value={this.state.lastName} onChange={this.handleChange} required />
                         <p className="error-message">{this.state.lastNameError}</p>
                     </div>
                     <div>
                         <input className="input-field" type="text" name="email" placeholder="Email"
-                               value={this.state.email} onChange={this.handleChange} required/>
+                               value={this.state.email} onChange={this.handleChange} required />
                         <p className="error-message">{this.state.emailError}</p>
                     </div>
                     <div>
                         <input className="input-field" type="password" name="password" placeholder="Password"
-                               value={this.state.password} onChange={this.handleChange} required/>
+                               value={this.state.password} onChange={this.handleChange} />
                         <p className="error-message">{this.state.passwordError}</p>
                     </div>
                     <div>
-                        <input className="input-field" type="password" name="confirmPassword"
-                               placeholder="Confirm Password" value={this.state.confirmPassword}
-                               onChange={this.handleChange} required/>
+                        <input className="input-field" type="password" name="confirmPassword" placeholder="Confirm Password"
+                               value={this.state.confirmPassword} onChange={this.handleChange} />
                         <p className="error-message">{this.state.confirmPasswordError}</p>
                     </div>
                     <div>
                         <input className="input-field" type="text" name="address1" placeholder="Address Line 1"
-                               value={this.state.address1} onChange={this.handleChange} required/>
+                               value={this.state.address1} onChange={this.handleChange} required />
                     </div>
                     <div>
                         <input className="input-field" type="text" name="address2" placeholder="Address Line 2"
-                               value={this.state.address2} onChange={this.handleChange} required/>
+                               value={this.state.address2} onChange={this.handleChange} required />
                     </div>
                     <div>
                         <select name="county" value={this.state.county} onChange={this.handleChange}>
@@ -189,12 +186,12 @@ export default class AccountDetails extends Component {
                     </div>
                     <div>
                         <input className="input-field" type="number" name="phone" placeholder="Phone Number"
-                               value={this.state.phone} onChange={this.handleChange} required/>
+                               value={this.state.phone} onChange={this.handleChange} required />
                         <p className="error-message">{this.state.phoneError}</p>
                     </div>
                     <div>
                         <input className="input-field" type="text" name="image" placeholder="Image"
-                               value={this.state.image} onChange={this.handleChange} required/>
+                               value={this.state.image} onChange={this.handleChange} />
                     </div>
 
                     <button type="submit">Update</button>

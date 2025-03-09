@@ -56,10 +56,10 @@ export default class AccountDropdown extends Component {
     }
 
     handleLogout = () => {
-        console.log("User logged out")
+        localStorage.removeItem("token")
         localStorage.clear()
-
         this.setState({isLoggedIn:false})
+        window.location.reload()
     }
 
     user() {

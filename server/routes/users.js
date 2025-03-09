@@ -64,7 +64,8 @@ router.post('/users/register', (req, res) => {
                 county,
                 phone,
                 accessLevel,
-                image
+                image,
+                cart: []
             }, (error, data) => {
                 if (data) {
                     res.json({name: firstName, accessLevel: accessLevel})
@@ -73,8 +74,6 @@ router.post('/users/register', (req, res) => {
         })
     })
 })
-
-
 
 router.get(`/users`, (req, res) => {
     usersModel.find((error, data) => {

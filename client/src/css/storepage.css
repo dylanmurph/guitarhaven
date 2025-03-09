@@ -65,7 +65,7 @@
     padding: 5px;
 }
 
-.guitar-name{
+.guitar-name {
     font-weight: bold;
     font-size: 18px;
     color: #181818;
@@ -86,4 +86,23 @@
     text-align: right;
     font-size: 12px;
     color: #7c7c7c;
+}
+
+.add-to-cart {
+    margin-bottom: 10px;
+    width: 50%;
+    text-decoration: none;
+    padding: 8px;
+    color: black;
+    background-color: #dbedff;
+    border-radius: 4px;
+    border: thin solid #b1d8ff;
+    box-sizing: border-box;
+}
+
+.add-to-cart:hover {
+    transition: background-color 0.5s ease-in-out, box-shadow 0.2s ease-in-out ;
+    background-color: #b1d8ff;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
