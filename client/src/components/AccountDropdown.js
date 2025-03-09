@@ -75,7 +75,7 @@ export default class AccountDropdown extends Component {
                    Your Purchases
                 </Link>
 
-                <Link className="submit-button" to={`/accountDetails/${userId}`}>
+                <Link className="submit-button" to="/accountDetails">
                     Account Details
                 </Link>
 
